@@ -4,6 +4,8 @@ class SearchesController < ApplicationController
   end
 
   def create
+    session[:last_search] = params[:search]
+
     @search = Search.new params[:search]
   end
 
