@@ -1,7 +1,11 @@
 Upcoming::Application.routes.draw do
 
-  resource :search
+  devise_for :users
 
-  root to: "search#new"
+  resource :search do
+    get :save
+  end
+
+  root to: "searches#new"
 
 end
