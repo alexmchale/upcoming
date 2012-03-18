@@ -1,0 +1,83 @@
+.tabbable.tabs-left
+
+  .span2
+
+    %ul.nav.nav-tabs
+
+      %li.active
+        %a{"data-toggle" => "tab", "href" => "#all"} All
+
+      %li
+        %a{"data-toggle" => "tab", "href" => "#movies"} Movies
+
+      %li
+        %a{"data-toggle" => "tab", "href" => "#tv-shows"} TV Shows
+
+  .span8
+
+    .tab-content.pull-right
+
+      #all.tab-pane.active
+        = form_tag search_path do
+          = hidden_field_tag "search[media]", "all"
+          %p= text_field_tag "search[term]", "", placeholder: "Search iTunes", autofocus: "autofocus"
+          %p= submit_tag "Search", :class => "btn btn-primary"
+
+      #movies.tab-pane
+        = form_tag search_path do
+          = hidden_field_tag "search[attribute]", "movieTerm"
+          = hidden_field_tag "search[media]", "movie"
+          %p= text_field_tag "search[term]", "", placeholder: "Search iTunes", autofocus: "autofocus"
+          %p= submit_tag "Search", :class => "btn btn-primary"
+
+      #tv-shows.tab-pane
+        = form_tag search_path do
+          = hidden_field_tag "search[attribute]", "showTerm"
+          = hidden_field_tag "search[media]", "tvShow"
+          %p= text_field_tag "search[term]", "", placeholder: "Search iTunes", autofocus: "autofocus"
+          %p
+            %label.radio
+              = radio_button_tag "search[entity]", "tvEpisode", false
+              By Episode
+            %label.radio
+              = radio_button_tag "search[entity]", "tvSeason", true
+              By Season
+          %p= submit_tag "Search", :class => "btn btn-primary"
+
+
+-#= form_tag search_path do
+-#
+-#  %p
+-#    = text_field_tag "search[term]", "", placeholder: "Search iTunes", autofocus: "autofocus"
+-#
+-#  %p
+-#    %label
+-#      = radio_button_tag "search[media]", "all", true
+-#      All
+-#    %label
+-#      = radio_button_tag "search[media]", "movie", false
+-#      Movie
+-#    %label
+-#      = radio_button_tag "search[media]", "music", false
+-#      Music
+-#    %label
+-#      = radio_button_tag "search[media]", "musicVideo", false
+-#      Music Video
+-#    %label
+-#      = radio_button_tag "search[media]", "audiobook", false
+-#      Audiobook
+-#    %label
+-#      = radio_button_tag "search[media]", "shortFilm", false
+-#      Short Film
+-#    %label
+-#      = radio_button_tag "search[media]", "tvShow", false
+-#      TV Show
+-#    %label
+-#      = radio_button_tag "search[media]", "software", false
+-#      Software
+-#    %label
+-#      = radio_button_tag "search[media]", "ebook", false
+-#      E-Book
+-#
+-#  %p
+-#    = submit_tag "Search", :class => "btn btn-primary"
