@@ -2,7 +2,7 @@ module SearchHelper
 
   def active_media_class id
     last_media = session[:last_search][:media] if session[:last_search]
-    last_media ||= "all"
+    last_media ||= "tvShow"
 
     if last_media == id then "active" else "" end
   end
@@ -24,6 +24,10 @@ module SearchHelper
         ].join
       end
     end
+  end
+
+  def describe_search search
+    search.inspect
   end
 
 end

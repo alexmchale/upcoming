@@ -1,3 +1,5 @@
+%h1 #{pluralize @search.count, 'search results'} for #{describe_search @search}
+
 %ul
 
   - @search.each do |result|

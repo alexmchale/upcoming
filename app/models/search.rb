@@ -42,4 +42,12 @@ class Search
     self
   end
 
+  def inspect
+    @options.inspect
+  end
+
+  def encoded
+    [ @options.to_json ].pack 'm'
+  end
+
 end
