@@ -55,5 +55,18 @@ module Upcoming
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Don't access the DB or initialize models when precompiling
+    config.assets.initialize_on_precompile = false
+
+    # Tweak generators
+    config.generators do |g|
+      g.template_engine :haml
+      g.stylesheet_engine :sass
+      g.fixture_replacement :factory_girl, :dir => "test/factories"
+    end
+
+    # Prefer sass generation
+    config.sass.preferred_syntax = :sass if Rails.env != "production"
   end
 end
