@@ -10,4 +10,13 @@
       .navbar-inner
         .container
           = link_to "Upcoming", root_path, :class => "brand"
-    .container= yield
+    .container
+      - if flash[:error].present?
+        .alert.fade.in.alert-error
+          %a.close{"data-dismiss" => "alert", :href => "#"} &times;
+          = flash[:error]
+      - if flash[:notice].present?
+        .alert.fade.in.alert-notice
+          %a.close{"data-dismiss" => "alert", :href => "#"} &times;
+          = flash[:notice]
+      = yield
