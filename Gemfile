@@ -9,6 +9,7 @@ gem 'haml'
 gem 'erb2haml'
 gem 'compass'
 gem 'simple_form'
+gem 'amazon-ecs', :require => 'amazon/ecs'
 
 group :assets do
   gem 'sass-rails'
