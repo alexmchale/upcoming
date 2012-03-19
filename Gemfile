@@ -4,7 +4,7 @@ gem 'rails', '3.2.2'
 gem 'pg'
 
 gem 'amazon-ecs', :require => 'amazon/ecs'
-gem 'compass'
+gem 'compass-rails'
 gem 'devise'
 gem 'erb2haml'
 gem 'haml'
