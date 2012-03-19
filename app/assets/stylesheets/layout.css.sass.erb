@@ -1,12 +1,28 @@
+@import "compass"
 @import "compass/css3/border-radius"
+@import "compass/css3/box-shadow"
 
 body
   background-image: url(<%= image_path "purty_wood.png" %>) 
 
-#main-content
+#main-content, #main-footer
   +border-radius(25px)
+  +box-shadow
   margin-top: 75px
-  padding-top: 25px
-  padding-bottom: 25px
-  padding-left: 25px
-  background-color: rgba(255, 255, 255, 0.5)
+  margin-bottom: 75px
+  padding: 25px
+  background-color: rgba(255, 255, 255, 0.6)
+
+.navbar-inner
+  +background-image(linear-gradient(#630, #210))
+  a.brand
+    color: #FA0 !important
+  li.active
+    a
+      +background-image(linear-gradient(#850, #320))
+
+a
+  color: #630
+  &:hover
+    color: #850
+    text-decoration: underline

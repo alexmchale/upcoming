@@ -1,9 +1,15 @@
 %h1 Your Searches
 
-%ul.searches
+%table.searches
 
-  - @searches.each do |search|
+  %thead
+    %th Search
+    %th Type
+    %th &nbsp;
 
-    %li
-      = link_to search.term, search_path(search)
-      (#{search.style})
+  %tbody
+    - @searches.each do |search|
+      %tr
+        %td= link_to search.term, search_path(search)
+        %td= search.style
+        %td= button_to "Delete", search_path(search), method: :delete, class: "btn btn-danger"

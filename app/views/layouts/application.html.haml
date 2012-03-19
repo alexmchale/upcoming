@@ -15,9 +15,10 @@
       .navbar-inner
         .container
           %ul.nav
+            %li= image_tag "28-star.png", width: 26, height: 26
             %li= link_to "Upcoming", root_path, :class => "brand"
-            %li= link_to "Search", new_search_path
-            %li= link_to "Saved Searches", searches_path
+            %li{:class => "#{active_if 'searches#new'}"}= link_to "Search", new_search_path
+            %li{:class => "#{active_if 'searches#index'}"}= link_to "Saved Searches", searches_path
 
     #main-content.container
       - if flash[:error].present?
@@ -29,3 +30,6 @@
           %a.close{"data-dismiss" => "alert", :href => "#"} &times;
           = flash[:notice]
       = yield
+
+    #main-footer.container
+      Upcoming is a production of #{link_to "Anti Clever Software", "http://anticlever.com"}.
