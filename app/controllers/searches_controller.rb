@@ -3,11 +3,11 @@ class SearchesController < ApplicationController
   before_filter :filter_parameters, :if => lambda { params[:search] }
 
   def index
-    @searches = Search.includes(:records).all
+    @searches = current_or_guest_user.searches.includes(:records).all
   end
 
   def show
-    @search = Search.includes(:records).find params[:id]
+    @search = current_or_guest_user.searches.includes(:records).find params[:id]
   end
 
   def new
@@ -16,6 +16,7 @@ class SearchesController < ApplicationController
 
   def create
     @search = Search.new params[:search]
+    @search.user = current_or_guest_user
     @search.retailer = Retailer.find_by_name "iTunes"
 
     if @search.save
@@ -27,17 +28,12 @@ class SearchesController < ApplicationController
   end
 
   def destroy
-    @search = Search.find params[:id]
+    @search = current_or_guest_user.searches.find params[:id]
     term = @search.term
     @search.destroy
 
     flash[:notice] = "Your search for '#{term}' has been removed."
     redirect_to searches_path
-  end
-
-  def save
-    options = params[:search].unpack("m").first
-    raise options.inspect
   end
 
   protected
