@@ -2,14 +2,10 @@
 
 %table.searches
 
-  %thead
-    %th Search
-    %th Type
-    %th &nbsp;
-
   %tbody
     - @searches.each do |search|
       %tr
+        %td= image_tag search.records.first.artwork_url if search.records.count > 0
         %td= link_to search.term, search_path(search)
         %td= search.style
-        %td= button_to "Delete", search_path(search), method: :delete, class: "btn btn-danger"
+        %td.pull-right= button_to "Delete", search_path(search), method: :delete, class: "btn btn-danger"
