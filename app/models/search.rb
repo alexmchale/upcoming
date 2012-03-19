@@ -1,5 +1,6 @@
 class Search < ActiveRecord::Base
 
+  belongs_to :user
   belongs_to :retailer
   has_many :search_results
   has_many :records, :through => :search_results
