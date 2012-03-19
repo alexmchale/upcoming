@@ -11,21 +11,21 @@
 
     .tab-content.pull-right
 
-      = search_pane_for "tvShow" do
+      = search_form_for @search, "tvShow" do |f|
         %h2 Search for TV Shows
-        = hidden_field_tag "search[attribute]", "showTerm"
-        %p= text_field_tag "search[term]", "", placeholder: "Search iTunes", autofocus: "autofocus"
+        = hidden_field_tag "search[parameters][attribute]", "showTerm"
+        %p= text_field_tag "search[parameters][term]", "", placeholder: "Search iTunes", autofocus: "autofocus"
         %p
           %label.radio
-            = radio_button_tag "search[entity]", "tvEpisode", false
+            = radio_button_tag "search[parameters][entity]", "tvEpisode", false
             By Episode
           %label.radio
-            = radio_button_tag "search[entity]", "tvSeason", true
+            = radio_button_tag "search[parameters][entity]", "tvSeason", true
             By Season
         %p= submit_tag "Search", :class => "btn btn-primary"
 
-      = search_pane_for "movie" do 
+      = search_form_for @search, "movie" do 
         %h2 Search for Movies
-        = hidden_field_tag "search[attribute]", "movieTerm"
-        %p= text_field_tag "search[term]", "", placeholder: "Search iTunes", autofocus: "autofocus"
+        = hidden_field_tag "search[parameters][attribute]", "movieTerm"
+        %p= text_field_tag "search[parameters][term]", "", placeholder: "Search iTunes", autofocus: "autofocus"
         %p= submit_tag "Search", :class => "btn btn-primary"

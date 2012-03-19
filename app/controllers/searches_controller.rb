@@ -1,23 +1,40 @@
 class SearchesController < ApplicationController
 
-  def show
-    if session[:last_search]
-      @search = Search.new session[:last_search]
+  before_filter :filter_parameters, :if => lambda { params[:search] }
 
-      if @search.count == 0
-        redirect_to new_search_path, notice: "I'm sorry, no results matched your search query."
-      end
-    else
-      redirect_to new_search_path
-    end
+  def index
+    @searches = Search.includes(:records).all
+  end
+
+  def show
+    @search = Search.includes(:records).find params[:id]
   end
 
   def new
+    @search = Search.new
   end
 
   def create
-    session[:last_search] = params[:search]
-    redirect_to search_path
+    @search = Search.new params[:search]
+    @search.retailer = Retailer.find_by_name "iTunes"
+
+    if @search.save
+      session[:search_id] = @search.id
+      redirect_to search_path @search
+    else
+      render "new"
+    end
+  end
+
+  def save
+    options = params[:search].unpack("m").first
+    raise options.inspect
+  end
+
+  protected
+
+  def filter_parameters
+    params[:search].slice! :parameters
   end
 
 end

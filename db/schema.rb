@@ -11,7 +11,51 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120318134207) do
+ActiveRecord::Schema.define(:version => 20120318185721) do
+
+  create_table "records", :force => true do |t|
+    t.integer  "retailer_id"
+    t.string   "code"
+    t.string   "name"
+    t.text     "artwork_url"
+    t.string   "genre"
+    t.string   "rating"
+    t.text     "description"
+    t.date     "release_date"
+    t.text     "url"
+    t.string   "type"
+    t.text     "result"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "records", ["retailer_id"], :name => "index_records_on_retailer_id"
+
+  create_table "retailers", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "search_results", :force => true do |t|
+    t.integer  "search_id"
+    t.integer  "record_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "search_results", ["record_id"], :name => "index_search_results_on_record_id"
+  add_index "search_results", ["search_id"], :name => "index_search_results_on_search_id"
+
+  create_table "searches", :force => true do |t|
+    t.integer  "retailer_id"
+    t.text     "parameters"
+    t.text     "response"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "searches", ["retailer_id"], :name => "index_searches_on_retailer_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

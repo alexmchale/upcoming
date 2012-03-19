@@ -1,53 +1,48 @@
-require "open-uri"
+class Search < ActiveRecord::Base
 
-class Search
+  belongs_to :retailer
+  has_many :search_results
+  has_many :records, :through => :search_results
 
-  include Enumerable
+  before_create :execute_search
+  after_create :initialize_records
 
-  def initialize options = {}
-    @options = options
+  serialize :parameters
+
+  def term
+    parameters[:term]
   end
 
-  def options options = {}
-    @options.merge! options
-    self
+  def style
+    return "TV Episodes" if [ parameters[:media], parameters[:entity] ] == %w( tvShow tvEpisode )
+    return "TV Seasons" if [ parameters[:media], parameters[:entity] ] == %w( tvShow tvSeason )
+    return "Movies" if parameters[:media] == "movie"
   end
 
-  def term term
-    options term: term
+  def perform
+    self.execute_search
+    self.initialize_records
   end
 
-  def tv_show
-    options media: "tvShow"
-  end
+  protected
 
-  def tv_season
-    options media: "tvShow", entity: "tvSeason"
-  end
-
-  def each
-    if @results
-      @results.each { |result| yield result }
-      return
-    end
-
-    options = @options.merge limit: 200
-    parameters = options.map { |k, v| [ URI.encode(k.to_s), URI.encode(v.to_s) ].join "=" }.join "&"
-    url = "http://itunes.apple.com/search?#{parameters}"
+  def execute_search
+    options   = parameters.merge limit: 50
+    encoded   = options.map { |k, v| [ URI.encode(k.to_s), URI.encode(v.to_s) ].join "=" }.join "&"
+    url       = "http://itunes.apple.com/search?#{encoded}"
     json_data = open(url).read
-    response = JSON.load json_data
-    @results = response["results"]
-    
-    @results.each { |result| yield result }
-    self
+
+    self.response = json_data
   end
 
-  def inspect
-    @options.inspect
-  end
-
-  def encoded
-    [ @options.to_json ].pack 'm'
+  def initialize_records
+    JSON.load(response)["results"].each do |result|
+      klass = Record.class_for result["wrapperType"], result["kind"], result["collectionType"]
+      raise "cannot find class for #{result.inspect}" unless klass
+      record = klass.find_or_create_by_result retailer, result
+      search_result = search_results.where(record_id: record.id).first
+      search_result ||= search_results.create!(record_id: record.id)
+    end
   end
 
 end

@@ -15,19 +15,20 @@ module SearchHelper
     end
   end
 
-  def search_pane_for id, &b
+  def search_form_for search, id, &b
     content_tag :div, :class => "tab-pane #{active_media_class id}", :id => id do
-      form_tag search_path do
+      simple_form_for search do |f|
+        b1 = lambda { b.call f }
         raw [
-          hidden_field_tag("search[media]", id),
-          content_tag(:div, &b)
+          hidden_field_tag("search[parameters][media]", id),
+          content_tag(:div, &b1)
         ].join
       end
     end
   end
 
   def describe_search search
-    search.inspect
+    search.parameters.inspect
   end
 
 end

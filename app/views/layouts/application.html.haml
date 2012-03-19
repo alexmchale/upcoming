@@ -1,16 +1,25 @@
 !!!
 %html
+
   %head
+
     %title Upcoming
+
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
+
   %body
-    .navbar
+
+    .navbar.navbar-fixed-top
       .navbar-inner
         .container
-          = link_to "Upcoming", root_path, :class => "brand"
-    .container
+          %ul.nav
+            %li= link_to "Upcoming", root_path, :class => "brand"
+            %li= link_to "Search", new_search_path
+            %li= link_to "Saved Searches", searches_path
+
+    #main-content.container
       - if flash[:error].present?
         .alert.fade.in.alert-error
           %a.close{"data-dismiss" => "alert", :href => "#"} &times;

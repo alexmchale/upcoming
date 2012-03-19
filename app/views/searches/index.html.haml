@@ -1,0 +1,9 @@
+%h1 Your Searches
+
+%ul.searches
+
+  - @searches.each do |search|
+
+    %li
+      = link_to search.term, search_path(search)
+      (#{search.style})

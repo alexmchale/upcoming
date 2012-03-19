@@ -3,24 +3,24 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.2'
 gem 'pg'
 
-gem 'jquery-rails'
-gem 'devise'
-gem 'haml'
-gem 'erb2haml'
-gem 'compass'
-gem 'simple_form'
 gem 'amazon-ecs', :require => 'amazon/ecs'
+gem 'compass'
+gem 'devise'
+gem 'erb2haml'
+gem 'haml'
+gem 'jquery-rails'
+gem 'simple_form'
 
 group :assets do
-  gem 'sass-rails'
   gem 'coffee-rails'
+  gem 'sass-rails'
   gem 'uglifier'
 end
 
 group :test, :development do
-  gem 'minitest'
-  gem 'factory_girl_rails'
-  gem 'turn'
-  gem 'autotest-rails'
   gem 'autotest-fsevent'
+  gem 'autotest-rails'
+  gem 'factory_girl_rails'
+  gem 'minitest'
+  gem 'turn'
 end

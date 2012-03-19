@@ -2,7 +2,7 @@ Upcoming::Application.routes.draw do
 
   devise_for :users
 
-  resource :search do
+  resources :searches do
     get :save
   end
 

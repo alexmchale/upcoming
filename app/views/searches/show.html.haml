@@ -1,9 +1,10 @@
-%h1 #{pluralize @search.count, 'search results'} for #{describe_search @search}
+%h1 #{pluralize @search.records.count, 'search results'} for #{describe_search @search}
 
 %ul
 
-  - @search.each do |result|
+  - @search.records.each do |record|
 
-    %li= render "result", result: result
+    %li= render "record", record: record
 
 %p= link_to "Search again", new_search_path
+-# %p= link_to "Save this search", save_search_path(search: @search.encoded)

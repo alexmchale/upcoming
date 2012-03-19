@@ -1,0 +1,7 @@
+- ::Rails.logger.info record.inspect
+
+%p= link_to record.name, record.url
+%p
+  %a{:href => record.url}
+    = image_tag record.artwork_url
+%p= raw record.description
