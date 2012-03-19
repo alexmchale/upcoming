@@ -13,6 +13,9 @@ body
   padding: 25px
   background-color: rgba(255, 255, 255, 0.6)
 
+#main-footer
+  text-align: center
+
 .navbar-inner
   +background-image(linear-gradient(#630, #210))
   a.brand
@@ -26,3 +29,20 @@ a
   &:hover
     color: #850
     text-decoration: underline
+
+table.basic
+  +box-shadow
+  width: 100%
+  tbody
+    td
+      padding: 20px
+    tr
+      &:nth-child(odd)
+        background-color: rgba(96, 48, 48, 0.1)
+      &:nth-child(even)
+        background-color: rgba(32, 16, 0, 0.1)
+    tr + tr
+      border-top: 1px solid rgba(0, 0, 0, 0.05)
+
+h3
+  margin-top: 25px

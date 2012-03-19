@@ -1,11 +1,17 @@
 %h1 Your Searches
 
-%table.searches
+%table.basic.searches
 
   %tbody
-    - @searches.each do |search|
+    - @searches.sort.each do |search|
       %tr
-        %td= image_tag search.records.first.artwork_url if search.records.count > 0
+        %td
+          - if search.records.count > 0
+            = image_tag search.records.first.artwork_url
+          - else
+            = image_tag "no-records.png"
         %td= link_to search.term, search_path(search)
         %td= search.style
         %td.pull-right= button_to "Delete", search_path(search), method: :delete, class: "btn btn-danger"
+
+%h3= link_to "Create a new Search", new_search_path

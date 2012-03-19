@@ -24,6 +24,11 @@ class Search < ActiveRecord::Base
     self.initialize_records
   end
 
+  def <=> obj
+    return -1 unless obj.kind_of? Search
+    self.term.downcase <=> obj.term.downcase
+  end
+
   protected
 
   def execute_search

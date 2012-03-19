@@ -1,10 +1,16 @@
 %h1 #{pluralize @search.records.count, 'search results'} for #{describe_search @search}
 
-%ul
+%table.basic.search
 
-  - @search.records.each do |record|
+  - @search.records.order("release_date DESC").each do |record|
 
-    %li= render "record", record: record
+    %tr
+      %td
+        %a{:href => record.url}
+          = image_tag record.artwork_url
+      %td
+        %h2= link_to record.name, record.url
+        %p= raw record.description
+        %p Release Date: #{record.release_date}
 
-%p= link_to "Search again", new_search_path
--# %p= link_to "Save this search", save_search_path(search: @search.encoded)
+%h3= link_to "Return to Saved Searches", searches_path
