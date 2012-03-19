@@ -11,7 +11,7 @@ class TvSeason < Record
       rating:       result["contentAdvisoryRating"],
       description:  result["longDescription"],
       release_date: Time.parse(result["releaseDate"]),
-      url:          result["collectionViewUrl"],
+      url:          retailer.affiliate_link(result["collectionViewUrl"]),
       result:       result.to_json
 
     record

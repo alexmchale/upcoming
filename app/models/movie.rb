@@ -11,7 +11,7 @@ class Movie < Record
       rating:       result["contentAdvisoryRating"],
       description:  result["longDescription"],
       release_date: Time.parse(result["releaseDate"]),
-      url:          result["trackViewUrl"],
+      url:          retailer.affiliate_link(result["trackViewUrl"]),
       result:       result.to_json
 
     record
