@@ -26,6 +26,15 @@ class SearchesController < ApplicationController
     end
   end
 
+  def destroy
+    @search = Search.find params[:id]
+    term = @search.term
+    @search.destroy
+
+    flash[:notice] = "Your search for '#{term}' has been removed."
+    redirect_to searches_path
+  end
+
   def save
     options = params[:search].unpack("m").first
     raise options.inspect
