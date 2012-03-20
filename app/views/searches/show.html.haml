@@ -1,4 +1,8 @@
-%h1 #{pluralize @search.records.count, @search.style} match <i>#{@search.term}</i>
+.top-label
+  %h1 #{pluralize @search.records.count, @search.style} match <i>#{@search.term}</i>
+
+.top-controls
+  = render 'monitor_by_email', search: @search
 
 %table.basic.search
 

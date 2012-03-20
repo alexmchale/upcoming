@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
 
   has_many :searches
 
+  def any_monitored_searches?
+    searches.where(monitor_by_email: true).count > 0
+  end
+
 end

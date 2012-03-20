@@ -1,0 +1,23 @@
+- if current_user
+  %a.monitor-by-email.toggler{:href => monitor_by_email_search_path(search), "data-monitoring" => search.monitor_by_email.to_s, "data-id" => search.id}
+    - if search.monitor_by_email
+      = image_tag "mail-active.png", width: 48, height: 32
+    - else
+      = image_tag "mail-inactive.png", width: 48, height: 32
+- else
+  %a.monitor-by-email{:href => new_user_registration_path(mail_search_id: search.id), "data-content" => "hi there"}
+    = image_tag "mail-inactive.png", width: 48, height: 32
+
+- unless current_or_guest_user.any_monitored_searches?
+
+  :javascript
+
+    $(function () {
+
+      $("a.monitor-by-email").popover({
+        title     : "Notify by email",
+        content   : "Activate to receive an email anytime a new record shows up in this search.",
+        placement : "left"
+      })
+
+    });

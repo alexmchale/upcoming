@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_no_cache
 
+  helper_method :current_or_guest_user
+
   protected
 
   # if user is logged in, return current_user, else return guest_user
