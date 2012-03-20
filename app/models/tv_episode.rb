@@ -17,6 +17,11 @@ class TvEpisode < Record
     record
   end
 
+  def self.is_match? search, result
+    terms = search.parameters[:term].to_s.split(/\s+/)
+    terms.all? { |term| result["collectionName"] =~ /#{term}/i }
+  end
+
 =begin
 {
   "wrapperType":"track",
