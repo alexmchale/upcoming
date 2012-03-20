@@ -1,5 +1,7 @@
 Upcoming::Application.routes.draw do
 
+  get "welcome", to: "welcome#index"
+
   devise_for :users
 
   resources :searches do
@@ -9,6 +11,6 @@ Upcoming::Application.routes.draw do
     end
   end
 
-  root to: "searches#new"
+  root to: "welcome#index"
 
 end
