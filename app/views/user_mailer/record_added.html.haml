@@ -1,3 +1,25 @@
-%p Search Style: #{@search.style}
-%p Search Term: #{@search.term}
+%p Hi there,
+
+%br
+
+%p Your search for <u>#{h @search.term}</u> has found a new #{@style}.
 %p= link_to @record.name, @record.url
+
+%br
+
+%p Thank you,
+
+%p
+  = link_to "Alex", "mailto:alex@anticlever.com?subject=Upcoming"
+  and
+  = link_to "Upcoming", "http://upcoming.anticlever.com"
+
+%br
+
+%p ---
+
+%p
+  If you've received this message in error, or just no longer want to receive
+  these messages, you can
+  = link_to "click here to unsubscribe", "#"
+  from all of your Upcoming searches.
