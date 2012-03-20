@@ -3,8 +3,10 @@
 %table.basic.searches
 
   %tbody
+
     - @searches.sort.each do |search|
-      %tr
+
+      %tr{"data-id" => search.id}
 
         %td.center
           %a{:href => destroy_search_path(search), method: :delete}
@@ -18,7 +20,7 @@
         %td= link_to search.term, search_path(search)
         %td= search.style
         %td
-          %a{:href => monitor_by_email_search_path(search)}
+          %a.monitor-by-email-toggler{:href => monitor_by_email_search_path(search), "data-monitoring" => search.monitor_by_email.to_s}
             - if search.monitor_by_email
               = image_tag "mail-active.png", width: 48, height: 32
             - else
