@@ -1,5 +1,6 @@
 class SearchesController < ApplicationController
 
+  before_filter :authenticate_user!
   before_filter :filter_parameters, if: lambda { params[:search] }
   before_filter :find_search, only: %w( show destroy monitor_by_email )
 
