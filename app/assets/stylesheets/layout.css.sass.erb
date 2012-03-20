@@ -2,8 +2,17 @@
 @import "compass/css3/border-radius"
 @import "compass/css3/box-shadow"
 
+$font-heading: "le-havre"
+$font-body: "le-havre"
+$font-small: 16px
+$font-medium: 20px
+$font-large: 26px
+$font-huge: 32px
+
 body
   background-image: url(<%= image_path "purty_wood.png" %>) 
+  font-family: "modesto-text", "le-havre"
+  font-size: $font-medium
 
 #main-content, #main-footer
   +border-radius(5px)
@@ -15,6 +24,7 @@ body
 
 #main-footer
   text-align: center
+  font-size: $font-medium
 
 .navbar-inner
   +background-image(linear-gradient(#630, #210))
@@ -50,10 +60,46 @@ table.basic
     td.center
       text-align: center
 
-h3
-  margin-top: 25px
-
 div.input
   margin-bottom: 25px
   .hint
+    font-size: $font-small
     font-style: italic
+    color: #666
+
+h1, h2
+  font-size: $font-huge
+
+h1, h2
+  margin-bottom: 25px
+
+h3
+  margin-top: 25px
+
+input[type='submit']
+  margin-top: 25px
+
+.top-label
+  float: left
+  max-width: 750px
+
+.top-controls
+  float: right
+
+ul.nav-tabs.search-types
+  border-right: none
+  li.active
+    a
+      border-color: rgba(128, 80, 0, 0.5)
+      background-color: rgba(255, 160, 0, 0.5)
+  a
+    border-color: rgba(48, 32, 0, 0.5)
+
+input[name='search[parameters][term]']
+  font-size: $font-large
+  width: 500px
+  padding: 25px
+  line-height: $font-large
+
+label.radio, label.control-label
+  font-size: $font-medium
