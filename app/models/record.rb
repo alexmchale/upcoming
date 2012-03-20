@@ -1,6 +1,8 @@
 class Record < ActiveRecord::Base
 
   belongs_to :retailer
+  has_many :search_results, dependent: :delete_all
+  has_many :searches, through: :search_results
 
   def self.class_for wrapperType, kind, collectionType
     return TvSeason if [ wrapperType, collectionType ] == [ "collection", "TV Season" ]

@@ -1,4 +1,5 @@
 Upcoming::Application.configure do
+
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -34,4 +35,13 @@ Upcoming::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Use MockSMTP
+  config.action_mailer.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address => "localhost",
+    :port => 1025,
+    :domain => "anticlever.com"
+  }
+
 end
