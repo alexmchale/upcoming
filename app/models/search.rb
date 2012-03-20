@@ -27,7 +27,12 @@ class Search < ActiveRecord::Base
 
   def <=> obj
     return -1 unless obj.kind_of? Search
-    self.term.downcase <=> obj.term.downcase
+
+    term1 = self.term.downcase
+    term2 = obj.term.downcase
+    return term1 <=> term2 if term1 != term2
+
+    self.created_at <=> obj.created_at
   end
 
   protected

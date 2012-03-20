@@ -1,13 +1,13 @@
 class SearchesController < ApplicationController
 
-  before_filter :filter_parameters, :if => lambda { params[:search] }
+  before_filter :filter_parameters, if: lambda { params[:search] }
+  before_filter :find_search, only: %w( show destroy monitor_by_email )
 
   def index
     @searches = current_or_guest_user.searches.includes(:records).all
   end
 
   def show
-    @search = current_or_guest_user.searches.includes(:records).find params[:id]
   end
 
   def new
@@ -28,7 +28,6 @@ class SearchesController < ApplicationController
   end
 
   def destroy
-    @search = current_or_guest_user.searches.find params[:id]
     term = @search.term
     @search.destroy
 
@@ -36,10 +35,20 @@ class SearchesController < ApplicationController
     redirect_to searches_path
   end
 
+  def monitor_by_email
+    @search.monitor_by_email = !@search.monitor_by_email
+    @search.save!
+    redirect_to request.referer
+  end
+
   protected
 
   def filter_parameters
     params[:search].slice! :parameters
+  end
+
+  def find_search
+    @search = current_or_guest_user.searches.includes(:records).find params[:id]
   end
 
 end

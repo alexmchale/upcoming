@@ -1,4 +1,4 @@
-%h1 #{pluralize @search.records.count, 'search results'} for #{describe_search @search}
+%h1 #{pluralize @search.records.count, @search.style} match <i>#{@search.term}</i>
 
 %table.basic.search
 
