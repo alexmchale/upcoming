@@ -64,4 +64,15 @@ Upcoming::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  # Configure mail in production to use SendGrid
+  config.action_mailer.smtp_settings = {
+    :user_name            => ENV["SENDGRID_USERNAME"],
+    :password             => ENV["SENDGRID_PASSWORD"],
+    :domain               => "anticlever.com",
+    :address              => "smtp.sendgrid.net",
+    :port                 => 587,
+    :authentication       => :plain,
+    :enable_starttls_auto => true
+  }
 end
