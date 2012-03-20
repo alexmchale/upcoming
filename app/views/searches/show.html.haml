@@ -6,7 +6,7 @@
 
 %table.basic.search
 
-  - @search.records.order("release_date DESC").each do |record|
+  - @search.records.order("created_at ASC").each do |record|
 
     %tr
       %td
