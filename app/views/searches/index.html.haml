@@ -20,10 +20,14 @@
         %td= link_to search.term, search_path(search)
         %td= search.style
         %td
-          %a.monitor-by-email-toggler{:href => monitor_by_email_search_path(search), "data-monitoring" => search.monitor_by_email.to_s}
-            - if search.monitor_by_email
-              = image_tag "mail-active.png", width: 48, height: 32
-            - else
+          - if current_user
+            %a.monitor-by-email-toggler{:href => monitor_by_email_search_path(search), "data-monitoring" => search.monitor_by_email.to_s}
+              - if search.monitor_by_email
+                = image_tag "mail-active.png", width: 48, height: 32
+              - else
+                = image_tag "mail-inactive.png", width: 48, height: 32
+          - else
+            %a{:href => new_user_registration_path(mail_search_id: search.id)}
               = image_tag "mail-inactive.png", width: 48, height: 32
 
 %h3= link_to "Create a new Search", new_search_path
