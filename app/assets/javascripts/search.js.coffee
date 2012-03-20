@@ -1,7 +1,8 @@
 $ ->
 
-  $("li").bind "shown", ->
-    $("input[name='search[term]']:visible").focus()
+  focusOnTerm = -> $("input[name='search[parameters][term]']:visible").focus()
+  $("li").bind "shown", focusOnTerm
+  focusOnTerm()
 
   $("a.monitor-by-email.toggler").click ->
     anchor = $(this)
