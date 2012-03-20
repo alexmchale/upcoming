@@ -6,6 +6,9 @@
     - @searches.sort.each do |search|
       %tr
 
+        %td.center
+          %a{:href => destroy_search_path(search), method: :delete}
+            = image_tag "x2.png", width: 28, height: 28
         %td
           %a{:href => search_path(search)}
             - if search.records.count > 0
@@ -14,12 +17,11 @@
               = image_tag "no-records.png"
         %td= link_to search.term, search_path(search)
         %td= search.style
-        %td.pull-right= button_to "Delete", search_path(search), method: :delete, class: "btn btn-danger"
         %td
           %a{:href => monitor_by_email_search_path(search)}
             - if search.monitor_by_email
-              = image_tag "star-active.png", width: 52, height: 52
+              = image_tag "mail-active.png", width: 48, height: 32
             - else
-              = image_tag "star-inactive.png", width: 52, height: 52
+              = image_tag "mail-inactive.png", width: 48, height: 32
 
 %h3= link_to "Create a new Search", new_search_path
