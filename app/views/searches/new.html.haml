@@ -13,19 +13,19 @@
 
       = search_form_for @search, "tvShow" do |f|
         %h2 Search for TV Shows
-        = hidden_field_tag "search[parameters][attribute]", "showTerm"
-        %p= text_field_tag "search[parameters][term]", "", placeholder: "Search iTunes", autofocus: "autofocus"
-        %p
-          %label.radio
-            = radio_button_tag "search[parameters][entity]", "tvEpisode", false
-            By Episode
-          %label.radio
-            = radio_button_tag "search[parameters][entity]", "tvSeason", true
-            By Season
+        = f.simple_fields_for :parameters do |f1|
+          = f1.input :attribute, as: :hidden, value: "showTerm"
+          = f1.input :term, as: :string, label: false, required: false, placeholder: "Search iTunes by show name"
+          = f1.input :entity, as: :radio, collection: { "Organize by season" => "tvSeason", "Organize by episode" => "tvEpisode" }, required: false, label: false, checked: "tvSeason"
+          - if current_user
+            = f1.input :monitor_by_email, as: :boolean, label: "Email me when new results are found for this search", hint: "This option will not email you about items that are found at the time the search is created.", input_html: { checked: "checked" }
         %p= submit_tag "Search", :class => "btn btn-primary"
 
-      = search_form_for @search, "movie" do 
+      = search_form_for @search, "movie" do |f|
         %h2 Search for Movies
-        = hidden_field_tag "search[parameters][attribute]", "movieTerm"
-        %p= text_field_tag "search[parameters][term]", "", placeholder: "Search iTunes", autofocus: "autofocus"
+        = f.simple_fields_for :parameters do |f1|
+          = f1.input :attribute, as: :hidden, value: "movieTerm"
+          = f1.input :term, as: :string, label: false, required: false, placeholder: "Search iTunes by movie name"
+          - if current_user
+            = f1.input :monitor_by_email, as: :boolean, label: "Email me when new results are found for this search", hint: "This option will not email you about items that are found at the time the search is created.", input_html: { checked: "checked" }
         %p= submit_tag "Search", :class => "btn btn-primary"

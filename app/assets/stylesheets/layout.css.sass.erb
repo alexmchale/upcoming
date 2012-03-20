@@ -6,7 +6,7 @@ body
   background-image: url(<%= image_path "purty_wood.png" %>) 
 
 #main-content, #main-footer
-  +border-radius(25px)
+  +border-radius(5px)
   +box-shadow
   margin-top: 75px
   margin-bottom: 75px
@@ -34,6 +34,7 @@ a
     text-decoration: underline
 
 table.basic
+  +border-radius(5px)
   +box-shadow
   width: 100%
   tbody
@@ -51,3 +52,8 @@ table.basic
 
 h3
   margin-top: 25px
+
+div.input
+  margin-bottom: 25px
+  .hint
+    font-style: italic
