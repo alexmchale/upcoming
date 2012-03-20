@@ -10,6 +10,8 @@ class Search < ActiveRecord::Base
 
   serialize :parameters
 
+  scope :monitored, where(monitor_by_email: true)
+
   def term
     parameters[:term]
   end
