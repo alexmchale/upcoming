@@ -9,12 +9,16 @@
   - @search.records.order("created_at ASC").each do |record|
 
     %tr
+
       %td
         %a{:href => record.url}
           = image_tag record.artwork_url
+
       %td
         %h2= link_to record.name, record.url
         %p= raw record.description
         %p Release Date: #{record.release_date}
+        - if record.respond_to?(:track) && record.respond_to?(:track_count)
+          %p Track: #{record.track} / #{record.track_count}
 
 %h3= link_to "Return to Saved Searches", searches_path

@@ -1,11 +1,22 @@
 class TvEpisode < Record
 
+  def track
+    parsed_result["trackNumber"]
+  end
+
+  def track_count
+    parsed_result["trackCount"]
+  end
+
   def self.find_or_create_by_result retailer, result
     record = retailer.records.where(type: "TvEpisode", code: result["trackId"].to_s).first
-    record ||= Movie.create! retailer: retailer, code: result["trackId"]
+    record ||= TvEpisode.create! retailer: retailer, code: result["trackId"]
+
+    name = result["trackName"]
+    name = "#{result["collectionName"]}: #{name}" if result["collectionName"].present?
 
     record.update_attributes! \
-      name:         result["trackName"],
+      name:         name,
       artwork_url:  result["artworkUrl100"],
       genre:        result["primaryGenreName"],
       rating:       result["contentAdvisoryRating"],
