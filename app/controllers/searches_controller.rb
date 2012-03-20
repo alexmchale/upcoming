@@ -1,6 +1,5 @@
 class SearchesController < ApplicationController
 
-  before_filter :authenticate_user!
   before_filter :filter_parameters, if: lambda { params[:search] }
   before_filter :find_search, only: %w( show destroy monitor_by_email )
 
@@ -37,8 +36,10 @@ class SearchesController < ApplicationController
   end
 
   def monitor_by_email
-    @search.monitor_by_email = !@search.monitor_by_email
-    @search.save!
+    if current_user
+      @search.monitor_by_email = !@search.monitor_by_email
+      @search.save!
+    end
     redirect_to request.referer
   end
 
