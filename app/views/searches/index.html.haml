@@ -9,7 +9,7 @@
       %tr{"data-id" => search.id}
 
         %td.center
-          %a{:href => destroy_search_path(search), method: :delete}
+          %a.delete-search{:href => destroy_search_path(search), method: :delete}
             = image_tag "x2.png", width: 28, height: 28
         %td
           %a{:href => search_path(search)}

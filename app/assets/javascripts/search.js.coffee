@@ -12,3 +12,11 @@ $ ->
     img = if newState then "mail-active" else "mail-inactive"
     anchor.find("img").attr "src", "/assets/#{img}.png"
     return false
+
+  $("a.delete-search").click ->
+    anchor = $(this)
+    row = anchor.closest("tr")
+    id = row.data("id")
+    $.get "/searches/#{id}/delete"
+    row.fadeOut 500
+    return false

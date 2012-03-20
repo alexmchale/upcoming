@@ -5,7 +5,7 @@ Upcoming::Application.routes.draw do
   resources :searches do
     member do 
       get :monitor_by_email
-      get :destroy, as: "destroy"
+      get "delete", as: "destroy", to: "searches#destroy"
     end
   end
 
