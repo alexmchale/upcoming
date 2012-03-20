@@ -29,6 +29,9 @@ GEM
     activesupport (3.2.2)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    airbrake (3.0.9)
+      activesupport
+      builder
     amazon-ecs (2.2.4)
       nokogiri (~> 1.4)
       ruby-hmac (~> 0.3)
@@ -154,6 +157,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrake
   amazon-ecs
   autotest-fsevent
   autotest-rails

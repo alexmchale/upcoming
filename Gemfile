@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.2'
 gem 'pg'
 
+gem 'airbrake'
 gem 'amazon-ecs', :require => 'amazon/ecs'
 gem 'compass-rails'
 gem 'devise'
