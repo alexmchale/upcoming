@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.2'
 gem 'pg'
+gem 'unicorn'
 
 gem 'airbrake'
 gem 'amazon-ecs', :require => 'amazon/ecs'
