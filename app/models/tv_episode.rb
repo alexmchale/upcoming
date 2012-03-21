@@ -12,8 +12,14 @@ class TvEpisode < Record
     parsed_result["trackCount"]
   end
 
+  def show_name
+    parsed_result["artistName"]
+  end
+
   def <=> obj
     return -1 unless obj.kind_of? TvEpisode
+
+    return self.release_date <=> obj.release_date if self.show_name != obj.show_name
 
     if self.season && obj.season
       return self.season <=> obj.season if self.season != obj.season

@@ -11,7 +11,7 @@ class TvSeason < Record
   def <=> obj
     return -1 unless obj.kind_of? TvSeason
 
-    return self.show_name <=> obj.show_name if self.show_name != obj.show_name
+    return self.release_date <=> obj.release_date if self.show_name != obj.show_name
     return self.season.to_i <=> obj.season.to_i
   end
 
