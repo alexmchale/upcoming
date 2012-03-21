@@ -1,11 +1,37 @@
 class TvEpisode < Record
 
+  def season
+    $1.to_i if self.name =~ /, Season (\d+): /
+  end
+
   def track
     parsed_result["trackNumber"]
   end
 
   def track_count
     parsed_result["trackCount"]
+  end
+
+  def <=> obj
+    return -1 unless obj.kind_of? TvEpisode
+
+    if self.season && obj.season
+      return self.season <=> obj.season if self.season != obj.season
+    else
+      return 1 if self.season
+      return -1 if obj.season
+    end
+
+    if self.track && obj.track
+      # Tracks with number greater than 100 are special features.
+      return 1 if self.track < 100 && obj.track >= 100
+      return -1 if self.track >= 100 && obj.track < 100
+      return self.track <=> obj.track
+    end
+
+    return 1 if self.track
+    return -1 if obj.track
+    return self.name <=> obj.name
   end
 
   def self.find_or_create_by_result retailer, result

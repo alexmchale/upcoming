@@ -6,7 +6,7 @@
 
 %table.basic.search
 
-  - @search.records.order("created_at ASC").each do |record|
+  - @search.records.all.sort.reverse.each do |record|
 
     %tr
 
@@ -18,6 +18,8 @@
         %h2= link_to record.name, record.url
         %p= raw record.description
         %p Release Date: #{record.release_date}
+        - if record.respond_to? :season
+          %p Season: #{record.season}
         - if record.respond_to?(:track) && record.respond_to?(:track_count)
           %p Track: #{record.track} / #{record.track_count}
 

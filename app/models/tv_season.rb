@@ -1,11 +1,26 @@
 class TvSeason < Record
 
+  def season
+    $1.to_i if self.name =~ /, Season (\d+)$/
+  end
+
+  def show_name
+    parsed_result["artistName"]
+  end
+
+  def <=> obj
+    return -1 unless obj.kind_of? TvSeason
+
+    return self.show_name <=> obj.show_name if self.show_name != obj.show_name
+    return self.season.to_i <=> obj.season.to_i
+  end
+
   def self.find_or_create_by_result retailer, result
     record = retailer.records.where(type: "TvSeason", code: result["collectionId"].to_s).first
     record ||= TvSeason.create! retailer: retailer, code: result["collectionId"]
 
     record.update_attributes! \
-      name:         result["collectionName"],
+      name:         result["collectionName"].strip,
       artwork_url:  result["artworkUrl100"],
       genre:        result["primaryGenreName"],
       rating:       result["contentAdvisoryRating"],
