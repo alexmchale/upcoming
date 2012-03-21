@@ -1,6 +1,5 @@
 class SearchesController < ApplicationController
 
-  before_filter :filter_parameters, if: lambda { params[:search] }
   before_filter :find_search, only: %w( show destroy monitor_by_email )
 
   def index
@@ -53,7 +52,9 @@ class SearchesController < ApplicationController
   protected
 
   def filter_parameters
-    params[:search].slice! :parameters
+    if params[:search]
+      params[:search].slice! :parameters
+    end
   end
 
   def find_search

@@ -3,8 +3,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :set_no_cache
+  before_filter :filter_parameters
 
-  helper_method :current_or_guest_user
+  helper_method :current_or_guest_user, :current_user
 
   protected
 
@@ -31,10 +32,20 @@ class ApplicationController < ActionController::Base
   end
 
   def create_guest_user
-    u = User.new
-    u.email = "guest_#{Time.now.to_i}#{rand(99)}@email_address.com"
-    u.save! validate: false
-    u
+    email = "guest_#{Time.now.to_i}#{rand(99)}@example.com"
+    User.create! email: email
+  end
+
+  def current_user
+    User.find(session[:user_id]) if session[:user_id].present?
+  end
+
+  def sign_in user
+    session[:user_id] = user.id
+  end
+
+  def sign_out
+    session[:user_id] = nil
   end
 
   # called (once) when the user logs in, insert any code your application needs

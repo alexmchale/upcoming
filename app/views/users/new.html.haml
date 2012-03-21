@@ -1,0 +1,8 @@
+%h1 Sign Up
+
+= simple_form_for @user do |f|
+
+  = f.input :email
+  = f.input :password, as: :password, label: "Password (optional)"
+
+  = f.submit value: "Sign Up", class: "btn btn-primary"

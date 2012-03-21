@@ -23,10 +23,10 @@
             %li{:class => "#{active_if 'searches#new'}"}= link_to "Search", new_search_path
             %li{:class => "#{active_if 'searches#index'}"}= link_to "Saved Searches", searches_path
             - if current_user
-              %li= link_to "Sign Out", destroy_user_session_path, method: "delete"
+              %li= link_to "Sign Out", sign_out_path, method: "delete"
             - else
-              %li{:class => active_if('sessions#new')}= link_to "Sign In", new_user_session_path
-              %li.sign-up{:class => active_if('registrations#new')}= link_to "Sign Up!", new_user_registration_path
+              %li{:class => active_if('user_sessions#new')}= link_to "Sign In", new_user_session_path
+              %li.sign-up{:class => active_if('users#new')}= link_to "Sign Up!", new_user_path
 
     #main-content.container
       - if flash[:error].present?

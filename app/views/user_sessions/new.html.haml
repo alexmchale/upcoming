@@ -1,0 +1,8 @@
+%h1 Sign In
+
+= simple_form_for @user, url: sign_in_path do |f|
+
+  = f.input :email
+  = f.input :password, as: :password, label: "Password (if you specified one)"
+
+  = f.submit value: "Sign In", class: "btn btn-primary"
