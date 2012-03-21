@@ -1,4 +1,14 @@
-%h1 Here are the searches you've made
+.top-label
+  %h1 Here are the searches you've made
+
+.top-controls
+  - if current_user && current_user.searches.count > 0
+    %a{:href => toggle_all_emails_searches_path}
+      - if current_user.searches.all?(&:monitor_by_email)
+        = image_tag "mail-active.png", width: 48, height: 32
+      - else
+        = image_tag "mail-inactive.png", width: 48, height: 32
+
 
 %table.basic.searches
 

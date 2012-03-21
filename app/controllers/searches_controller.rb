@@ -49,6 +49,16 @@ class SearchesController < ApplicationController
     redirect_to request.referer
   end
 
+  def toggle_all_emails
+    if current_user
+      monitor_by_email = !current_user.searches.all?(&:monitor_by_email)
+      current_user.searches.update_all monitor_by_email: monitor_by_email
+      redirect_to searches_path
+    else
+      redirect_to sign_in_path
+    end
+  end
+
   def stop_all_emails
     if current_user
       current_user.searches.monitored.update_all monitor_by_email: false

@@ -8,6 +8,7 @@ Upcoming::Application.routes.draw do
       get "delete", as: "destroy", to: "searches#destroy"
     end
     collection do
+      get :toggle_all_emails
       get :stop_all_emails
     end
   end
