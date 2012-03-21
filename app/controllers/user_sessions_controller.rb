@@ -15,6 +15,10 @@ class UserSessionsController < ApplicationController
       else
         redirect_to new_search_path
       end
+    elsif !@user && params[:user][:email].present?
+      @user = User.new params[:user]
+      @offer_to_create = true
+      render "new"
     else
       flash[:error] = "That isn't a valid username and password combination. Please try again."
       redirect_to new_user_session_path
@@ -29,6 +33,9 @@ class UserSessionsController < ApplicationController
   protected
 
   def filter_parameters
+    if params[:user]
+      params[:user].slice! :email, :password
+    end
   end
 
 end

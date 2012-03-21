@@ -1,8 +1,25 @@
 %h1 Sign In
 
-= simple_form_for @user, url: sign_in_path do |f|
+- if @offer_to_create
 
-  = f.input :email
-  = f.input :password, as: :password, label: "Password (if you specified one)"
+  %h3
+    The email address #{@user.email} wasn't found in Upcoming. Would you like to create an account?
 
-  = f.submit value: "Sign In", class: "btn btn-primary"
+  = simple_form_for @user do |f|
+
+    = f.input :email, as: :hidden
+    = f.input :password, as: :hidden, input_html: { value: params[:user][:password] }
+
+    = f.submit value: "Yes, create the user", class: "btn btn-primary"
+
+  %p= link_to "No thanks, take me back to sign in", new_user_session_path
+  %p= link_to "No thanks, take me to create a new user", new_user_path
+
+- else
+
+  = simple_form_for @user, url: sign_in_path do |f|
+
+    = f.input :email
+    = f.input :password, as: :password, label: "Password (if you specified one)"
+
+    = f.submit value: "Sign In", class: "btn btn-primary"

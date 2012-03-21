@@ -15,7 +15,11 @@ class User < ActiveRecord::Base
   end
 
   def password
-    @password ||= Password.new encrypted_password
+    if self.encrypted_password.present?
+      @password ||= Password.new encrypted_password
+    else
+      @password ||= ""
+    end
   end
 
   def password= new_password
