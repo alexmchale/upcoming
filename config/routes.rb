@@ -7,6 +7,9 @@ Upcoming::Application.routes.draw do
       get :monitor_by_email
       get "delete", as: "destroy", to: "searches#destroy"
     end
+    collection do
+      get :stop_all_emails
+    end
   end
 
   resources :users

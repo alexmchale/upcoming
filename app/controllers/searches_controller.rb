@@ -49,6 +49,15 @@ class SearchesController < ApplicationController
     redirect_to request.referer
   end
 
+  def stop_all_emails
+    if current_user
+      current_user.searches.monitored.update_all monitor_by_email: false
+      redirect_to searches_path
+    else
+      redirect_to sign_in_path
+    end
+  end
+
   protected
 
   def filter_parameters
