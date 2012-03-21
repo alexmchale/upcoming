@@ -11,14 +11,18 @@
         %td.center
           %a.delete-search{:href => destroy_search_path(search), method: :delete}
             = image_tag "x2.png", width: 28, height: 28
+
         %td
           %a{:href => search_path(search)}
             - if search.records.count > 0
               = image_tag search.records.first.artwork_url
             - else
               = image_tag "no-records.png"
-        %td= link_to search.term, search_path(search)
-        %td= search.style
+
+        %td= link_to search.term, search_path(search), :class => "search-term"
+
+        %td= pluralize search.records.count, search.style.downcase.singularize
+
         %td= render 'monitor_by_email', search: search
 
 %h3= link_to "Create a new Search", new_search_path
