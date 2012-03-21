@@ -5,9 +5,16 @@ class SearchesController < ApplicationController
 
   def index
     @searches = current_or_guest_user.searches.includes(:records).all
+
+    if current_or_guest_user.searches.monitored.count == 0 && @searches.count > 0 && !email_instructed?
+      flash.now[:alert] = "Click on an envelope and Upcoming will send you an email when that search finds new results."
+    end
   end
 
   def show
+    if current_or_guest_user.searches.monitored.count == 0 && !email_instructed?
+      flash.now[:alert] = "Click on the envelope and Upcoming will send you an email when this search finds new results."
+    end
   end
 
   def new
@@ -51,6 +58,10 @@ class SearchesController < ApplicationController
 
   def find_search
     @search = current_or_guest_user.searches.includes(:records).find params[:id]
+  end
+
+  def email_instructed?
+    session[:email_instructed].tap { session[:email_instructed] = true }
   end
 
 end

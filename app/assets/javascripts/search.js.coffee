@@ -12,6 +12,8 @@ $ ->
     $.get "/searches/#{id}/monitor_by_email"
     img = if newState then "mail-active" else "mail-inactive"
     anchor.find("img").attr "src", "/assets/#{img}.png"
+    $("div.alert-error").slideUp()
+    $("a.monitor-by-email").popover("hide").popover("disable")
     return false
 
   $("a.delete-search").click ->
