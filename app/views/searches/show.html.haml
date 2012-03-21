@@ -22,5 +22,7 @@
           %p Season: #{record.season}
         - if record.respond_to?(:track) && record.respond_to?(:track_count)
           %p Track: #{record.track} / #{record.track_count}
+        - if record.preview_url.present?
+          %p= link_to "View a preview", record.preview_url, target: "_blank"
 
 %h3= link_to "Return to Saved Searches", searches_path

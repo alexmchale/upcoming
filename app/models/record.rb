@@ -8,6 +8,10 @@ class Record < ActiveRecord::Base
     @parsed_result ||= JSON.load self.result
   end
 
+  def preview_url
+    @preview_url ||= parsed_result["previewUrl"]
+  end
+
   def self.class_for wrapperType, kind, collectionType
     return TvSeason if [ wrapperType, collectionType ] == [ "collection", "TV Season" ]
     return TvEpisode if [ wrapperType, kind ] == [ "track", "tv-episode" ]
