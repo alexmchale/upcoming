@@ -37,6 +37,10 @@
         .alert.fade.in.alert-notice
           %a.close{"data-dismiss" => "alert", :href => "#"} &times;
           = flash[:notice]
+      - if flash[:alert].present?
+        .alert.fade.in.alert-error
+          %a.close{"data-dismiss" => "alert", :href => "#"} &times;
+          = flash[:alert]
       = yield
 
     #main-footer.container

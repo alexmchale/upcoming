@@ -1,5 +1,5 @@
 .top-label
-  %h1 #{pluralize @search.records.count, @search.style} match <i>#{@search.term}</i>
+  %h1 #{pluralize @search.records.count, @search.style.downcase.singularize} match <em>#{@search.term}</em>
 
 .top-controls
   = render 'monitor_by_email', search: @search

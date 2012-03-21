@@ -2,17 +2,35 @@
 @import "compass/css3/border-radius"
 @import "compass/css3/box-shadow"
 
-$font-heading: "le-havre"
-$font-body: "le-havre"
-$font-small: 16px
-$font-medium: 20px
-$font-large: 26px
-$font-huge: 32px
+$font-heading: "prenton"
+$font-body: "prenton"
+$font-small: 14px
+$font-medium: 18px
+$font-large: 24px
+$font-huge: 30px
+
+$color-translucent-white: rgba(255, 255, 255, 0.6)
+$color-orange-light: #850
+$color-orange-medium: #630
+$color-orange-dark: #210
+$color-translucent-medium: rgba(96, 48, 48, 0.1)
+$color-translucent-dark: rgba(32, 16, 0, 0.1)
+$color-translucent-black: rgba(0, 0, 0, 0.05)
+$color-border-bright: rgba(255, 160, 0, 0.5)
+$color-border-light: rgba(160, 120, 0, 0.5)
+$color-border-medium: rgba(128, 80, 0, 0.5)
+$color-border-dark: rgba(48, 32, 0, 0.5)
 
 body
   background-image: url(<%= image_path "purty_wood.png" %>) 
-  font-family: "modesto-text", "le-havre"
+  font-family: $font-body, "helvetica", sans-serif
   font-size: $font-medium
+
+h1, h2, h3, h4, h5, h6
+  font-family: $font-heading, "helvetica", sans-serif
+
+p
+  font-family: $font-body
 
 #main-content, #main-footer
   +border-radius(5px)
@@ -20,19 +38,19 @@ body
   margin-top: 75px
   margin-bottom: 75px
   padding: 25px
-  background-color: rgba(255, 255, 255, 0.6)
+  background-color: $color-translucent-white
 
 #main-footer
   text-align: center
   font-size: $font-medium
 
 .navbar-inner
-  +background-image(linear-gradient(#630, #210))
+  +background-image(linear-gradient($color-orange-medium, $color-orange-dark))
   a.brand
     color: #FA0 !important
   li.active
     a
-      +background-image(linear-gradient(#850, #320))
+      +background-image(linear-gradient($color-orange-light, $color-orange-dark))
   li.sign-up a
     font-weight: bold
     font-size: 1.25em
@@ -47,16 +65,17 @@ table.basic
   +border-radius(5px)
   +box-shadow
   width: 100%
+  font-size: $font-large
   tbody
     td
       padding: 20px
     tr
       &:nth-child(odd)
-        background-color: rgba(96, 48, 48, 0.1)
+        background-color: $color-translucent-medium
       &:nth-child(even)
-        background-color: rgba(32, 16, 0, 0.1)
+        background-color: $color-translucent-dark
     tr + tr
-      border-top: 1px solid rgba(0, 0, 0, 0.05)
+      border-top: 1px solid $color-translucent-black
     td.center
       text-align: center
 
@@ -82,6 +101,10 @@ input[type='submit']
 .top-label
   float: left
   max-width: 750px
+  em
+    text-transform: uppercase
+    font-style: italic
+    text-decoration: underline
 
 .top-controls
   float: right
@@ -90,16 +113,16 @@ ul.nav-tabs.search-types
   border-right: none
   li.active
     a
-      border-color: rgba(128, 80, 0, 0.5)
-      background-color: rgba(255, 160, 0, 0.5)
+      border-color: $color-border-medium
+      background-color: $color-border-bright
       &:hover
-        border-color: rgba(128, 80, 0, 0.5)
-        background-color: rgba(255, 160, 0, 0.15)
+        border-color: $color-border-medium
+        background-color: $color-border-bright
   a
-    border-color: rgba(48, 32, 0, 0.5)
+    border-color: $color-border-medium
     &:hover
-      border-color: rgba(48, 32, 0, 0.5)
-      background-color: rgba(255, 160, 0, 0.15)
+      border-color: $color-border-medium
+      background-color: $color-border-light 
 
 input[name='search[parameters][term]']
   font-size: $font-large
@@ -116,9 +139,12 @@ h1.big-greeting
 
 .tutorial
   h2
+    margin-top: 40px
+  h3
     font-style: italic
-    margin-top: 50px
+    margin: 50px
     font-size: $font-large
+    font-weight: normal
   img
     display: block
     margin-left: auto

@@ -1,18 +1,23 @@
 %h1.big-greeting Upcoming
 
-%h2 Upcoming is a tool for monitoring search results on iTunes. Here's how it works:
-
 .tutorial
 
-  %h2 1. Decide what you want to search for
+  %h2 Upcoming is a tool for automatically searching for movies and television shows on iTunes.
+
+  %h2 Here's how it works:
+
+  %h3 Decide what you want to search for.
   = image_tag "example-search.jpg", width: 500
 
-  %h2 2. Take a peek at what was found
+  %h3 Take a peek at what was found.
   = image_tag "example-episode-list.jpg", width: 500
 
-  %h2 3. View your list of searches
+  %h3 View your list of searches.
   = image_tag "example-search-list.jpg", width: 500
 
-  %h2 4. When a search with a yellow envelope has new results, you'll receive an email to let you know
+  %h3
+    When a search that you have marked with a yellow envelope has new results,
+    you'll receive an email with a link to the iTunes Store.
+
 
 %h2= link_to "Click here to get started searching!", new_search_path
