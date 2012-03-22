@@ -24,8 +24,9 @@ class Search < ActiveRecord::Base
     return "Movies" if parameters[:media] == "movie"
   end
 
-  def perform
+  def perform notify = nil
     self.execute_search
+    self.send_new_record_emails = notify unless notify.nil?
     self.initialize_records
   end
 
@@ -39,10 +40,8 @@ class Search < ActiveRecord::Base
     self.created_at <=> obj.created_at
   end
 
-  protected
-
   def execute_search
-    options   = parameters.merge limit: 50
+    options   = parameters.merge limit: 200
     encoded   = options.map { |k, v| [ URI.encode(k.to_s), URI.encode(v.to_s) ].join "=" }.join "&"
     url       = "http://itunes.apple.com/search?#{encoded}"
     json_data = open(url).read
