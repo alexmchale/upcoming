@@ -1,7 +1,7 @@
 class TvEpisode < Record
 
   def season
-    $1.to_i if self.name =~ /, Season (\d+): /
+    $1.to_i if self.name =~ /Season (\d+)/
   end
 
   def track
