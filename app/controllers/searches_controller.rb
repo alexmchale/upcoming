@@ -72,7 +72,7 @@ class SearchesController < ApplicationController
 
   def filter_parameters
     if params[:search]
-      params[:search].slice! :parameters
+      params[:search].slice! :parameters, :monitor_by_email
     end
   end
 
