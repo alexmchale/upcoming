@@ -12,6 +12,8 @@ class Search < ActiveRecord::Base
 
   scope :monitored, where(monitor_by_email: true)
 
+  attr_accessor :send_new_record_emails
+
   def term
     parameters[:term]
   end
@@ -45,6 +47,7 @@ class Search < ActiveRecord::Base
     url       = "http://itunes.apple.com/search?#{encoded}"
     json_data = open(url).read
 
+    self.send_new_record_emails = !self.new_record?
     self.response = json_data
   end
 
@@ -55,7 +58,7 @@ class Search < ActiveRecord::Base
       raise "cannot find class for #{result.inspect}" unless klass
       record = klass.find_or_create_by_result retailer, result
       search_result = search_results.where(record_id: record.id).first
-      search_result ||= search_results.create!(record_id: record.id)
+      search_result ||= search_results.create!(record_id: record.id, send_email: send_new_record_emails)
     end
   end
 
