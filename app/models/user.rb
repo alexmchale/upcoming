@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates_format_of :email, with: EMAIL_REGEX
 
   def any_monitored_searches?
-    searches.where(monitor_by_email: true).count > 0
+    @monitored ||= searches.where(monitor_by_email: true).count > 0
   end
 
   def password

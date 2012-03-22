@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
   # find guest_user object associated with the current session,
   # creating one as needed
   def guest_user
-    User.find(session[:guest_user_id].nil? ? session[:guest_user_id] = create_guest_user.id : session[:guest_user_id])
+    @_guest_user ||= User.find(session[:guest_user_id].nil? ? session[:guest_user_id] = create_guest_user.id : session[:guest_user_id])
   end
 
   def create_guest_user
@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    User.find(session[:user_id]) if session[:user_id].present?
+    @_current_user ||= User.find(session[:user_id]) if session[:user_id].present?
   end
 
   def sign_in user
