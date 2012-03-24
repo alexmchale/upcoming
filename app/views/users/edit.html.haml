@@ -1,0 +1,29 @@
+.top-label
+  %h1= @user.email
+
+.top-controls
+
+.clearfix
+
+%p= link_to "Change your email", "#", "data-toggle" => "modal", "data-target" => "#change-email-modal"
+%p= link_to "Change your password", "#", "data-toggle" => "modal", "data-target" => "#change-password-modal"
+
+#change-email-modal.modal.fade
+  = simple_form_for @user do |f|
+    .modal-header
+      %a.close{"data-dismiss" => "modal"} ×
+      %h3 Change your email address
+    .modal-body
+      = f.input :email
+    .modal-footer
+      = f.submit class: "btn btn-primary"
+
+#change-password-modal.modal.fade
+  = simple_form_for @user do |f|
+    .modal-header
+      %a.close{"data-dismiss" => "modal"} ×
+      %h3 Change your password
+    .modal-body
+      = f.input :password
+    .modal-footer
+      = f.submit class: "btn btn-primary"

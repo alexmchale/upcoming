@@ -13,7 +13,7 @@ Upcoming::Application.routes.draw do
     end
   end
 
-  resources :users
+  resources :users, :constraints => { :id => /[^\/]+/ }
 
   resources :user_sessions
   get "/sign_in", as: "sign_in", to: "user_sessions#new"

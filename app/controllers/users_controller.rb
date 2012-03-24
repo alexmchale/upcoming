@@ -17,6 +17,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+
+    if @user.update_attributes params[:user]
+      flash[:notice] = "Your user account has been updated."
+    else
+      flash[:error] = @user.errors.full_messages.first
+    end
+
+    redirect_to edit_user_path @user.reload
+  end
+
   protected
 
   def filter_parameters

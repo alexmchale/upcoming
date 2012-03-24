@@ -48,4 +48,8 @@ class User < ActiveRecord::Base
     UserMailer.records_added(self, email_results).deliver if email_results.present?
   end
 
+  def to_param
+    email
+  end
+
 end
