@@ -37,4 +37,15 @@ class User < ActiveRecord::Base
     return self.password == password
   end
 
+  def search_and_notify
+    new_results =
+      self.searches.all.map do |search|
+        search.perform
+      end.flatten.compact.uniq
+
+    # Only notify for searches that we should and that are new releases.
+    email_results = new_results.select(&:email?)
+    UserMailer.records_added(self, email_results).deliver if email_results.present?
+  end
+
 end

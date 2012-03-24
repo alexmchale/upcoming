@@ -18,7 +18,7 @@
           = f1.input :term, as: :string, label: false, required: false, placeholder: "Search iTunes by show name"
           = f1.input :entity, as: :radio, collection: { "Organize by season" => "tvSeason", "Organize by episode" => "tvEpisode" }, required: false, label: false, checked: "tvSeason"
         - if current_user
-          = f.input :monitor_by_email, as: :boolean, label: "Email me when new results are found for this search", hint: "This option will not email you about items that are found at the time the search is created.", input_html: { checked: "checked" }
+          = f.input :monitor_by_email, as: :boolean, label: "Email me about new releases that match this search", hint: "This option will not email you about items that are found at the time the search is created.", input_html: { checked: "checked" }
         %p= submit_tag "Search", :class => "btn btn-primary"
 
       = search_form_for @search, "movie" do |f|
@@ -27,5 +27,5 @@
           = f1.input :attribute, as: :hidden, value: "movieTerm"
           = f1.input :term, as: :string, label: false, required: false, placeholder: "Search iTunes by movie name"
         - if current_user
-          = f.input :monitor_by_email, as: :boolean, label: "Email me when new results are found for this search", hint: "This option will not email you about items that are found at the time the search is created.", input_html: { checked: "checked" }
+          = f.input :monitor_by_email, as: :boolean, label: "Email me about new releases that match this search", hint: "This option will not email you about items that are found at the time the search is created.", input_html: { checked: "checked" }
         %p= submit_tag "Search", :class => "btn btn-primary"

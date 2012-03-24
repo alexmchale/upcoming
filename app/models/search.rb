@@ -18,6 +18,10 @@ class Search < ActiveRecord::Base
     parameters[:term]
   end
 
+  def terms
+    term.to_s.split(/\s+/)
+  end
+
   def style
     return "TV Episodes" if [ parameters[:media], parameters[:entity] ] == %w( tvShow tvEpisode )
     return "TV Seasons" if [ parameters[:media], parameters[:entity] ] == %w( tvShow tvSeason )
@@ -50,15 +54,17 @@ class Search < ActiveRecord::Base
     self.response = json_data
   end
 
+  # Returns a list of new search results found.
   def initialize_records
-    JSON.load(response)["results"].each do |result|
+    JSON.load(response)["results"].map do |result|
       klass = Record.class_for result["wrapperType"], result["kind"], result["collectionType"]
       next unless klass.is_match? self, result
-      raise "cannot find class for #{result.inspect}" unless klass
+
       record = klass.find_or_create_by_result retailer, result
-      search_result = search_results.where(record_id: record.id).first
-      search_result ||= search_results.create!(record_id: record.id, send_email: send_new_record_emails)
-    end
+      unless search_result = search_results.where(record_id: record.id).first
+        search_results.create!(record_id: record.id)
+      end
+    end.flatten.compact.uniq
   end
 
 end

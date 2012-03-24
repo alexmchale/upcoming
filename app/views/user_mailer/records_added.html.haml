@@ -1,0 +1,32 @@
+%p Hi there,
+
+%br
+
+%p Upcoming has found some new iTunes items that you might be interested in.
+
+%br
+
+- @results.each do |result|
+
+  %p
+    Your search for <u>#{h result.search.term}</u> found:
+    = link_to result.record.name, result.record.url
+
+%br
+
+%p Thank you,
+
+%p
+  = link_to "Alex", "mailto:alex@anticlever.com?subject=Upcoming"
+  and
+  = link_to "Upcoming", "http://upcoming.anticlever.com"
+
+%br
+
+%p ---
+
+%p
+  If you've received this message in error, or just no longer want to receive
+  these messages, you can
+  = link_to "click here to unsubscribe", "http://upcoming.anticlever.com/searches/stop_all_emails"
+  from all of your Upcoming searches.

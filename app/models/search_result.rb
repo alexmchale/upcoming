@@ -3,16 +3,8 @@ class SearchResult < ActiveRecord::Base
   belongs_to :search
   belongs_to :record
 
-  after_create :notify_user
-
-  attr_accessor :send_email
-
-  protected
-
-  def notify_user
-    if search.monitor_by_email && send_email
-      UserMailer.record_added(search, record).deliver
-    end
+  def email?
+    search.monitor_by_email && record.release_date.to_date >= search.created_at.to_date
   end
 
 end
