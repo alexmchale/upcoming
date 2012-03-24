@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   include BCrypt
 
-  has_many :searches
+  has_many :searches, :dependent => :destroy
 
   validates_uniqueness_of :email
   validates_presence_of :email
