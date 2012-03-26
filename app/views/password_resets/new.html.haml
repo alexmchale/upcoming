@@ -1,0 +1,7 @@
+%h1 Forgot your password?
+
+= simple_form_for @password_reset do |f|
+
+  = f.input :email
+
+  = f.submit value: "Reset My Password", class: "btn btn-primary"

@@ -21,6 +21,8 @@ Upcoming::Application.routes.draw do
   get "/sign_out", as: "sign_out", to: "user_sessions#destroy"
   delete "/sign_out", as: "sign_out", to: "user_sessions#destroy"
 
+  resources :password_resets
+
   root to: "welcome#index"
 
 end

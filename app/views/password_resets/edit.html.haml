@@ -1,0 +1,7 @@
+%h1 Password Reset
+
+= simple_form_for @user do |f|
+
+  = f.input :password
+
+  = f.submit value: "Update Your Password", class: "btn btn-primary"

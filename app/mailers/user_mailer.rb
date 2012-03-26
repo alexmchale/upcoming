@@ -22,4 +22,12 @@ class UserMailer < ActionMailer::Base
     mail to: @user.email, subject: @subject
   end
 
+  def password_reset password_reset
+    @user           = password_reset.user
+    @password_reset = password_reset
+    @subject        = "[Upcoming] Password reset requested"
+
+    mail to: @user.email, subject: @subject
+  end
+
 end

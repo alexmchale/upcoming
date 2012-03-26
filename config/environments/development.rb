@@ -44,4 +44,7 @@ Upcoming::Application.configure do
     :domain => "anticlever.com"
   }
 
+  config.action_mailer.default_url_options = {
+    host: "upcoming.dev"
+  }
 end
