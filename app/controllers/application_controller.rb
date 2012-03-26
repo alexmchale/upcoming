@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  include ActionController::ParameterFilter
+  include ParameterFilter
 
   protect_from_forgery
 
