@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  accepts fields: { user: %w( email password ) }, on: %w( create update )
+
   def new
     @user = User.new
   end
@@ -31,14 +33,6 @@ class UsersController < ApplicationController
     end
 
     redirect_to edit_user_path @user.reload
-  end
-
-  protected
-
-  def filter_parameters
-    if params[:user]
-      params[:user].slice! :email, :password
-    end
   end
 
 end

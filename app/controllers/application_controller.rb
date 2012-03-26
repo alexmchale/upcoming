@@ -1,9 +1,10 @@
 class ApplicationController < ActionController::Base
 
+  include ActionController::ParameterFilter
+
   protect_from_forgery
 
   before_filter :set_no_cache
-  before_filter :filter_parameters
 
   helper_method :current_or_guest_user, :current_user
 

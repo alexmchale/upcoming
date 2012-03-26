@@ -4,6 +4,7 @@ gem 'rails', '3.2.2'
 gem 'pg'
 gem 'unicorn'
 
+gem 'actioncontroller-parameter_filter' #, :path => '../actioncontroller-parameter_filter'
 gem 'airbrake'
 gem 'amazon-ecs', :require => 'amazon/ecs'
 gem 'bcrypt-ruby', :require => 'bcrypt'

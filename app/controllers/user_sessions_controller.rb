@@ -1,5 +1,7 @@
 class UserSessionsController < ApplicationController
 
+  accepts fields: { user: %w( email password ) }, on: :create
+
   def new
     @user = User.new
   end
@@ -28,14 +30,6 @@ class UserSessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     redirect_to sign_in_path
-  end
-
-  protected
-
-  def filter_parameters
-    if params[:user]
-      params[:user].slice! :email, :password
-    end
   end
 
 end

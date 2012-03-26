@@ -1,5 +1,7 @@
 class SearchesController < ApplicationController
 
+  accepts fields: { search: %w( parameters monitor_by_email ) }
+
   before_filter :find_search, only: %w( show destroy monitor_by_email )
 
   def index
@@ -69,12 +71,6 @@ class SearchesController < ApplicationController
   end
 
   protected
-
-  def filter_parameters
-    if params[:search]
-      params[:search].slice! :parameters, :monitor_by_email
-    end
-  end
 
   def find_search
     @search = current_or_guest_user.searches.includes(:records).find params[:id]

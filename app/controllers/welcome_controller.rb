@@ -6,9 +6,4 @@ class WelcomeController < ApplicationController
     end
   end
 
-  protected
-
-  def filter_parameters
-  end
-
 end
