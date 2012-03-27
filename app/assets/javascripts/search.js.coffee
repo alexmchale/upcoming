@@ -23,3 +23,11 @@ $ ->
     $.get "/searches/#{id}/delete"
     row.fadeOut 500
     return false
+
+  $("a.js-acknowledge-result").click ->
+    anchor = $(this)
+    row = anchor.closest("tr")
+    id = row.data("id")
+    $.get "/search_results/#{id}/acknowledge"
+    row.fadeOut 500
+    return false

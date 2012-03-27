@@ -11,7 +11,7 @@
 
     - @unacknowledged_search_results.sort.each do |result|
 
-      %tr
+      %tr{"data-id" => result.id}
 
         %td
           %a{:href => result.record.url}
@@ -27,7 +27,7 @@
             %p Track: #{result.record.track}
 
         %td
-          %a{href: acknowledge_search_result_path(result)}
+          %a{href: acknowledge_search_result_path(result), class: "js-acknowledge-result"}
             = image_tag "19-check.png", width: 32, height: 36
 
 %h3= link_to "Create a new Search", new_search_path
