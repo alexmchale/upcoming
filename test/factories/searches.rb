@@ -2,8 +2,12 @@
 
 FactoryGirl.define do
   factory :search do
-    retailer nil
-    parameters "MyText"
-    response "MyText"
+    parameters nil
+    response nil
+    monitor_by_email false
+  end
+
+  factory :search_for_firefly, parent: :search do
+    parameters({ attribute: "showTerm", term: "firefly", entity: "tvEpisode" })
   end
 end

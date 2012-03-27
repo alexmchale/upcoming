@@ -2,6 +2,10 @@
 
 FactoryGirl.define do
   factory :retailer do
-    name "MyString"
+    name "iTunes"
+  end
+
+  factory :itunes, parent: :retailer do
+    name "iTunes"
   end
 end
