@@ -12,8 +12,6 @@ class Search < ActiveRecord::Base
 
   scope :monitored, where(monitor_by_email: true)
 
-  attr_accessor :send_new_record_emails
-
   def term
     parameters[:term]
   end
@@ -30,7 +28,6 @@ class Search < ActiveRecord::Base
 
   def perform notify = nil
     self.execute_search
-    self.send_new_record_emails = notify unless notify.nil?
     self.initialize_records
   end
 
@@ -50,7 +47,6 @@ class Search < ActiveRecord::Base
     url       = "http://itunes.apple.com/search?#{encoded}"
     json_data = open(url).read
 
-    self.send_new_record_emails = !self.new_record?
     self.response = json_data
   end
 
