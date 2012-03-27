@@ -1,6 +1,9 @@
 class SearchResultsController < ApplicationController
 
   def index
+    if @unacknowledged_search_results.blank?
+      redirect_to searches_path
+    end
   end
 
   def acknowledge
