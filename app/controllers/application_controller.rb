@@ -1,10 +1,11 @@
 class ApplicationController < ActionController::Base
 
-  include ParameterFilter
+  #include ParameterFilter
 
   protect_from_forgery
 
   before_filter :set_no_cache
+  before_filter :find_unacknowledged_search_results
 
   helper_method :current_or_guest_user, :current_user
 
@@ -61,6 +62,15 @@ class ApplicationController < ActionController::Base
     response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
     response.headers["Pragma"] = "no-cache"
     response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
+  end
+
+  def find_unacknowledged_search_results
+    @unacknowledged_search_results =
+      current_or_guest_user.
+      search_results.
+      unacknowledged.
+      order("created_at DESC").
+      all
   end
 
 end

@@ -23,6 +23,15 @@ Upcoming::Application.routes.draw do
 
   resources :password_resets
 
+  resources :search_results do
+    member do
+      get :acknowledge
+    end
+    collection do
+      get :acknowledge
+    end
+  end
+
   root to: "welcome#index"
 
 end

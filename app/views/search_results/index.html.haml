@@ -1,0 +1,33 @@
+.top-label
+  %h1= pluralize @unacknowledged_search_results.count, "New Matches"
+
+.top-controls
+  %a{:href => acknowledge_search_results_path}
+    = image_tag "19-check.png", width: 32, height: 36
+
+%table.basic.search-results
+
+  %tbody
+
+    - @unacknowledged_search_results.sort.each do |result|
+
+      %tr
+
+        %td
+          %a{:href => result.record.url}
+            = image_tag result.record.artwork_url
+
+        %td
+          %h2= link_to result.record.name, result.record.url
+          %p= raw result.record.description
+          %p Release Date: #{result.record.release_date}
+          - if result.record.respond_to? :season
+            %p Season: #{result.record.season}
+          - if result.record.respond_to?(:track)
+            %p Track: #{result.record.track}
+
+        %td
+          %a{href: acknowledge_search_result_path(result)}
+            = image_tag "19-check.png", width: 32, height: 36
+
+%h3= link_to "Create a new Search", new_search_path

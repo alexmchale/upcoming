@@ -1,6 +1,6 @@
 class UserSessionsController < ApplicationController
 
-  accepts fields: { user: %w( email password ) }, on: :create
+  #accepts fields: { user: %w( email password ) }, on: :create
 
   def new
     @user = User.new

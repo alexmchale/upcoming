@@ -1,6 +1,6 @@
 class SearchesController < ApplicationController
 
-  accepts fields: { search: %w( parameters monitor_by_email ) }
+  #accepts fields: { search: [ :monitor_by_email, { parameters: %w( parameters monitor_by_email ) }
 
   before_filter :find_search, only: %w( show destroy monitor_by_email )
 

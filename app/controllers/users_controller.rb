@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  accepts fields: { user: %w( email password ) }, on: %w( create update )
+  #accepts fields: { user: %w( email password ) }, on: %w( create update )
 
   def new
     @user = User.new

@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120324172236) do
+ActiveRecord::Schema.define(:version => 20120327022529) do
+
+  create_table "notifications", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.integer  "unique_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "notifications", ["user_id"], :name => "index_notifications_on_user_id"
 
   create_table "password_resets", :force => true do |t|
     t.integer  "user_id"
@@ -49,8 +59,9 @@ ActiveRecord::Schema.define(:version => 20120324172236) do
   create_table "search_results", :force => true do |t|
     t.integer  "search_id"
     t.integer  "record_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.boolean  "acknowledged", :default => false
   end
 
   add_index "search_results", ["record_id"], :name => "index_search_results_on_record_id"

@@ -1,6 +1,6 @@
 class PasswordResetsController < ApplicationController
 
-  accepts fields: { password_reset: :email }, on: :create
+  #accepts fields: { password_reset: :email }, on: :create
 
   def new
     @password_reset = PasswordReset.new
