@@ -7,4 +7,5 @@ $ ->
     return true
 
   # Activate PJAX.
-  $("a[data-pjax]").pjax()
+  $("a[data-pjax]").pjax
+    timeout: 5000
