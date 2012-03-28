@@ -1,0 +1,313 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://itunes.apple.com/search?attribute=showTerm&term=firefly&entity=tvEpisode&limit=200
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      x-apple-orig-url-path:
+      - /search?attribute=showTerm&term=firefly&entity=tvEpisode&limit=200
+      x-apple-translated-wo-url:
+      - /WebObjects/MZStoreServices.woa/ws/wsSearch?attribute=showTerm&term=firefly&entity=tvEpisode&limit=200
+      x-apple-application-site:
+      - NWK
+      x-apple-max-age:
+      - '3600'
+      content-type:
+      - text/javascript; charset=utf-8
+      x-apple-application-instance:
+      - '1014014'
+      x-webobjects-loadaverage:
+      - '0'
+      cache-control:
+      - no-transform, max-age=19
+      date:
+      - Wed, 28 Mar 2012 00:20:00 GMT
+      content-length:
+      - '22517'
+      connection:
+      - keep-alive
+      x-apple-partner:
+      - origin.0
+    body:
+      encoding: US-ASCII
+      string: ! "\n\n\n{\n \"resultCount\":14,\n \"results\": [\n{\"wrapperType\":\"track\",
+        \"kind\":\"tv-episode\", \"artistId\":151198837, \"collectionId\":151801083,
+        \"trackId\":151961947, \"artistName\":\"Firefly\", \"collectionName\":\"Firefly,
+        Season 1\", \"trackName\":\"Serenity\", \"collectionCensoredName\":\"Firefly,
+        Season 1\", \"trackCensoredName\":\"Serenity\", \"artistViewUrl\":\"http://itunes.apple.com/us/tv-show/firefly/id151198837?uo=4\",
+        \"collectionViewUrl\":\"http://itunes.apple.com/us/tv-season/serenity/id151801083?i=151961947&uo=4\",
+        \"trackViewUrl\":\"http://itunes.apple.com/us/tv-season/serenity/id151801083?i=151961947&uo=4\",
+        \"previewUrl\":\"http://a1508.v.phobos.apple.com/us/r1000/050/Video/9d/49/8c/mzm.obwavtot..640x480.h264lc.d2.p.m4v\",
+        \"artworkUrl30\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.40x30-75.jpg\",
+        \"artworkUrl60\":\"http://a4.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.80x60-75.jpg\",
+        \"artworkUrl100\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.100x100-75.jpg\",
+        \"collectionPrice\":21.99, \"trackPrice\":1.99, \"releaseDate\":\"2002-12-20T08:00:00Z\",
+        \"collectionExplicitness\":\"notExplicit\", \"trackExplicitness\":\"notExplicit\",
+        \"discCount\":1, \"discNumber\":1, \"trackCount\":14, \"trackNumber\":1, \"trackTimeMillis\":5202463.0,
+        \"country\":\"USA\", \"currency\":\"USD\", \"primaryGenreName\":\"Sci Fi &
+        Fantasy\", \"shortDescription\":\"The crew of the spaceship Serenity attempt
+        to rid themselves of precious salvaged cargo.\", \n\"longDescription\":\"The
+        crew of Serenity is eager to rid themselves of an easily traceable cargo they
+        salvaged from a vessel adrift in space, totally unaware that a passenger has
+        brought an even more dangerous cargo aboard.\"}, \n{\"wrapperType\":\"track\",
+        \"kind\":\"tv-episode\", \"artistId\":151198837, \"collectionId\":151801083,
+        \"trackId\":151961878, \"artistName\":\"Firefly\", \"collectionName\":\"Firefly,
+        Season 1\", \"trackName\":\"The Train Job\", \"collectionCensoredName\":\"Firefly,
+        Season 1\", \"trackCensoredName\":\"The Train Job\", \"artistViewUrl\":\"http://itunes.apple.com/us/tv-show/firefly/id151198837?uo=4\",
+        \"collectionViewUrl\":\"http://itunes.apple.com/us/tv-season/the-train-job/id151801083?i=151961878&uo=4\",
+        \"trackViewUrl\":\"http://itunes.apple.com/us/tv-season/the-train-job/id151801083?i=151961878&uo=4\",
+        \"previewUrl\":\"http://a522.v.phobos.apple.com/us/r1000/017/Video/78/0c/91/mzm.ytxkjagf..640x480.h264lc.d2.p.m4v\",
+        \"artworkUrl30\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.40x30-75.jpg\",
+        \"artworkUrl60\":\"http://a4.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.80x60-75.jpg\",
+        \"artworkUrl100\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.100x100-75.jpg\",
+        \"collectionPrice\":21.99, \"trackPrice\":1.99, \"releaseDate\":\"2002-09-20T07:00:00Z\",
+        \"collectionExplicitness\":\"notExplicit\", \"trackExplicitness\":\"notExplicit\",
+        \"discCount\":1, \"discNumber\":1, \"trackCount\":14, \"trackNumber\":2, \"trackTimeMillis\":2600863.0,
+        \"country\":\"USA\", \"currency\":\"USD\", \"primaryGenreName\":\"Sci Fi &
+        Fantasy\", \"shortDescription\":\"Mal and his crew are hired to pull off a
+        train heist.\", \n\"longDescription\":\"Mal has second thoughts after discovering
+        that two boxes of Alliance goods his crew has been hired to steal are full
+        of badly needed medical supplies headed for the mining town of Paradiso.\"},
+        \n{\"wrapperType\":\"track\", \"kind\":\"tv-episode\", \"artistId\":151198837,
+        \"collectionId\":151801083, \"trackId\":151961882, \"artistName\":\"Firefly\",
+        \"collectionName\":\"Firefly, Season 1\", \"trackName\":\"Bushwhacked\", \"collectionCensoredName\":\"Firefly,
+        Season 1\", \"trackCensoredName\":\"Bushwhacked\", \"artistViewUrl\":\"http://itunes.apple.com/us/tv-show/firefly/id151198837?uo=4\",
+        \"collectionViewUrl\":\"http://itunes.apple.com/us/tv-season/bushwhacked/id151801083?i=151961882&uo=4\",
+        \"trackViewUrl\":\"http://itunes.apple.com/us/tv-season/bushwhacked/id151801083?i=151961882&uo=4\",
+        \"previewUrl\":\"http://a844.v.phobos.apple.com/us/r1000/001/Video/82/15/d1/mzm.bcgmqohw..640x480.h264lc.d2.p.m4v\",
+        \"artworkUrl30\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.40x30-75.jpg\",
+        \"artworkUrl60\":\"http://a4.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.80x60-75.jpg\",
+        \"artworkUrl100\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.100x100-75.jpg\",
+        \"collectionPrice\":21.99, \"trackPrice\":1.99, \"releaseDate\":\"2002-09-27T07:00:00Z\",
+        \"collectionExplicitness\":\"notExplicit\", \"trackExplicitness\":\"notExplicit\",
+        \"discCount\":1, \"discNumber\":1, \"trackCount\":14, \"trackNumber\":3, \"trackTimeMillis\":2671551.0,
+        \"country\":\"USA\", \"currency\":\"USD\", \"primaryGenreName\":\"Sci Fi &
+        Fantasy\", \"shortDescription\":\"The crew discovers the sole survivor of
+        a Reaver attack aboard a derelict spacecraft.\", \n\"longDescription\":\"After
+        encountering a booby-trapped spacecraft carrying the lone crewmember of a
+        horrific Reaver attack, Serenity is boarded by an Alliance Commander looking
+        for Simon and River.\"}, \n{\"wrapperType\":\"track\", \"kind\":\"tv-episode\",
+        \"artistId\":151198837, \"collectionId\":151801083, \"trackId\":151961886,
+        \"artistName\":\"Firefly\", \"collectionName\":\"Firefly, Season 1\", \"trackName\":\"Shindig\",
+        \"collectionCensoredName\":\"Firefly, Season 1\", \"trackCensoredName\":\"Shindig\",
+        \"artistViewUrl\":\"http://itunes.apple.com/us/tv-show/firefly/id151198837?uo=4\",
+        \"collectionViewUrl\":\"http://itunes.apple.com/us/tv-season/shindig/id151801083?i=151961886&uo=4\",
+        \"trackViewUrl\":\"http://itunes.apple.com/us/tv-season/shindig/id151801083?i=151961886&uo=4\",
+        \"previewUrl\":\"http://a1877.v.phobos.apple.com/us/r1000/018/Video/46/0a/16/mzm.yzorotjy..640x480.h264lc.d2.p.m4v\",
+        \"artworkUrl30\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.40x30-75.jpg\",
+        \"artworkUrl60\":\"http://a4.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.80x60-75.jpg\",
+        \"artworkUrl100\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.100x100-75.jpg\",
+        \"collectionPrice\":21.99, \"trackPrice\":1.99, \"releaseDate\":\"2002-11-01T08:00:00Z\",
+        \"collectionExplicitness\":\"notExplicit\", \"trackExplicitness\":\"notExplicit\",
+        \"discCount\":1, \"discNumber\":1, \"trackCount\":14, \"trackNumber\":4, \"trackTimeMillis\":2674783.0,
+        \"country\":\"USA\", \"currency\":\"USD\", \"primaryGenreName\":\"Sci Fi &
+        Fantasy\", \"shortDescription\":\"Mal upsets a wealthy man at an elegant social
+        event and is challenged to a sword fight.\", \n\"longDescription\":\"In order
+        to secure a job transporting cargo off-planet for a client, Mal attends a
+        social event where a dance with Inara leads to him being challenged to a swordfight
+        in defense of her honor.\"}, \n{\"wrapperType\":\"track\", \"kind\":\"tv-episode\",
+        \"artistId\":151198837, \"collectionId\":151801083, \"trackId\":151961894,
+        \"artistName\":\"Firefly\", \"collectionName\":\"Firefly, Season 1\", \"trackName\":\"Out
+        of Gas\", \"collectionCensoredName\":\"Firefly, Season 1\", \"trackCensoredName\":\"Out
+        of Gas\", \"artistViewUrl\":\"http://itunes.apple.com/us/tv-show/firefly/id151198837?uo=4\",
+        \"collectionViewUrl\":\"http://itunes.apple.com/us/tv-season/out-of-gas/id151801083?i=151961894&uo=4\",
+        \"trackViewUrl\":\"http://itunes.apple.com/us/tv-season/out-of-gas/id151801083?i=151961894&uo=4\",
+        \"previewUrl\":\"http://a1479.v.phobos.apple.com/us/r1000/015/Video/ee/51/1c/mzm.ofqctsev..640x480.h264lc.d2.p.m4v\",
+        \"artworkUrl30\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.40x30-75.jpg\",
+        \"artworkUrl60\":\"http://a4.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.80x60-75.jpg\",
+        \"artworkUrl100\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.100x100-75.jpg\",
+        \"collectionPrice\":21.99, \"trackPrice\":1.99, \"releaseDate\":\"2002-10-25T07:00:00Z\",
+        \"collectionExplicitness\":\"notExplicit\", \"trackExplicitness\":\"notExplicit\",
+        \"discCount\":1, \"discNumber\":1, \"trackCount\":14, \"trackNumber\":8, \"trackTimeMillis\":2674719.0,
+        \"country\":\"USA\", \"currency\":\"USD\", \"primaryGenreName\":\"Sci Fi &
+        Fantasy\", \"shortDescription\":\"Mal recalls how he first acquired the vessel
+        and assembled the crew.\", \n\"longDescription\":\"After an explosion leaves
+        Serenity crippled, Mal orders everyone to abandon ship while he stays behind
+        in an attempt to make repairs-and reminisces how he found the ship and picked
+        its crew.\"}, \n{\"wrapperType\":\"track\", \"kind\":\"tv-episode\", \"artistId\":151198837,
+        \"collectionId\":151801083, \"trackId\":151961890, \"artistName\":\"Firefly\",
+        \"collectionName\":\"Firefly, Season 1\", \"trackName\":\"Our Mrs. Reynolds\",
+        \"collectionCensoredName\":\"Firefly, Season 1\", \"trackCensoredName\":\"Our
+        Mrs. Reynolds\", \"artistViewUrl\":\"http://itunes.apple.com/us/tv-show/firefly/id151198837?uo=4\",
+        \"collectionViewUrl\":\"http://itunes.apple.com/us/tv-season/our-mrs.-reynolds/id151801083?i=151961890&uo=4\",
+        \"trackViewUrl\":\"http://itunes.apple.com/us/tv-season/our-mrs.-reynolds/id151801083?i=151961890&uo=4\",
+        \"previewUrl\":\"http://a1841.v.phobos.apple.com/us/r1000/027/Video/d7/6a/5a/mzm.qglbubqt..640x480.h264lc.d2.p.m4v\",
+        \"artworkUrl30\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.40x30-75.jpg\",
+        \"artworkUrl60\":\"http://a4.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.80x60-75.jpg\",
+        \"artworkUrl100\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.100x100-75.jpg\",
+        \"collectionPrice\":21.99, \"trackPrice\":1.99, \"releaseDate\":\"2002-10-04T07:00:00Z\",
+        \"collectionExplicitness\":\"notExplicit\", \"trackExplicitness\":\"notExplicit\",
+        \"discCount\":1, \"discNumber\":1, \"trackCount\":14, \"trackNumber\":6, \"trackTimeMillis\":2673726.0,
+        \"country\":\"USA\", \"currency\":\"USD\", \"primaryGenreName\":\"Sci Fi &
+        Fantasy\", \"shortDescription\":\"After ridding a planet of bandits, Mal accidentally
+        marries one of the local women.\", \n\"longDescription\":\"After a celebration
+        in which the crew is honored for ridding a planet of a group of bandits, they
+        return to Serenity to find a woman named Saffron who claims that Mal married
+        her during the festivities.\"}, \n{\"wrapperType\":\"track\", \"kind\":\"tv-episode\",
+        \"artistId\":151198837, \"collectionId\":151801083, \"trackId\":151961892,
+        \"artistName\":\"Firefly\", \"collectionName\":\"Firefly, Season 1\", \"trackName\":\"Jaynestown\",
+        \"collectionCensoredName\":\"Firefly, Season 1\", \"trackCensoredName\":\"Jaynestown\",
+        \"artistViewUrl\":\"http://itunes.apple.com/us/tv-show/firefly/id151198837?uo=4\",
+        \"collectionViewUrl\":\"http://itunes.apple.com/us/tv-season/jaynestown/id151801083?i=151961892&uo=4\",
+        \"trackViewUrl\":\"http://itunes.apple.com/us/tv-season/jaynestown/id151801083?i=151961892&uo=4\",
+        \"previewUrl\":\"http://a1295.v.phobos.apple.com/us/r1000/039/Video/18/4b/55/mzm.kvlmfltd..640x480.h264lc.d2.p.m4v\",
+        \"artworkUrl30\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.40x30-75.jpg\",
+        \"artworkUrl60\":\"http://a4.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.80x60-75.jpg\",
+        \"artworkUrl100\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.100x100-75.jpg\",
+        \"collectionPrice\":21.99, \"trackPrice\":1.99, \"releaseDate\":\"2002-10-18T07:00:00Z\",
+        \"collectionExplicitness\":\"notExplicit\", \"trackExplicitness\":\"notExplicit\",
+        \"discCount\":1, \"discNumber\":1, \"trackCount\":14, \"trackNumber\":7, \"trackTimeMillis\":2675743.0,
+        \"country\":\"USA\", \"currency\":\"USD\", \"primaryGenreName\":\"Sci Fi &
+        Fantasy\", \"shortDescription\":\"Jayne discovers the populace of a small
+        planet worships him as a hero.\", \n\"longDescription\":\"When the crew returns
+        to a planet where Jayne participated in a heist gone bad, they're shocked
+        to discover that Jayne's past actions have turned him into a local hero of
+        Robin Hood-like mythic proportions.\"}, \n{\"wrapperType\":\"track\", \"kind\":\"tv-episode\",
+        \"artistId\":151198837, \"collectionId\":151801083, \"trackId\":151961898,
+        \"artistName\":\"Firefly\", \"collectionName\":\"Firefly, Season 1\", \"trackName\":\"War
+        Stories\", \"collectionCensoredName\":\"Firefly, Season 1\", \"trackCensoredName\":\"War
+        Stories\", \"artistViewUrl\":\"http://itunes.apple.com/us/tv-show/firefly/id151198837?uo=4\",
+        \"collectionViewUrl\":\"http://itunes.apple.com/us/tv-season/war-stories/id151801083?i=151961898&uo=4\",
+        \"trackViewUrl\":\"http://itunes.apple.com/us/tv-season/war-stories/id151801083?i=151961898&uo=4\",
+        \"previewUrl\":\"http://a1143.v.phobos.apple.com/us/r1000/008/Video/be/28/7d/mzm.abxkioix..640x480.h264lc.d2.p.m4v\",
+        \"artworkUrl30\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.40x30-75.jpg\",
+        \"artworkUrl60\":\"http://a4.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.80x60-75.jpg\",
+        \"artworkUrl100\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.100x100-75.jpg\",
+        \"collectionPrice\":21.99, \"trackPrice\":1.99, \"releaseDate\":\"2002-12-06T08:00:00Z\",
+        \"collectionExplicitness\":\"notExplicit\", \"trackExplicitness\":\"notExplicit\",
+        \"discCount\":1, \"discNumber\":1, \"trackCount\":14, \"trackNumber\":10,
+        \"trackTimeMillis\":2669406.0, \"country\":\"USA\", \"currency\":\"USD\",
+        \"primaryGenreName\":\"Sci Fi & Fantasy\", \"shortDescription\":\"The crew
+        stages a rescue mission when Niska takes Mal prisoner.\", \n\"longDescription\":\"Wash
+        regrets insisting he be allowed to accompany Mal on a mission after the two
+        men are captured by Adelai Niska\\u2014the client who previously hired Mal
+        to steal the medicine bound for Paradiso.\"}, \n{\"wrapperType\":\"track\",
+        \"kind\":\"tv-episode\", \"artistId\":151198837, \"collectionId\":151801083,
+        \"trackId\":151961902, \"artistName\":\"Firefly\", \"collectionName\":\"Firefly,
+        Season 1\", \"trackName\":\"Objects In Space\", \"collectionCensoredName\":\"Firefly,
+        Season 1\", \"trackCensoredName\":\"Objects In Space\", \"artistViewUrl\":\"http://itunes.apple.com/us/tv-show/firefly/id151198837?uo=4\",
+        \"collectionViewUrl\":\"http://itunes.apple.com/us/tv-season/objects-in-space/id151801083?i=151961902&uo=4\",
+        \"trackViewUrl\":\"http://itunes.apple.com/us/tv-season/objects-in-space/id151801083?i=151961902&uo=4\",
+        \"previewUrl\":\"http://a1858.v.phobos.apple.com/us/r1000/036/Video/52/6d/28/mzm.ttjnkvba..640x480.h264lc.d2.p.m4v\",
+        \"artworkUrl30\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.40x30-75.jpg\",
+        \"artworkUrl60\":\"http://a4.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.80x60-75.jpg\",
+        \"artworkUrl100\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.100x100-75.jpg\",
+        \"collectionPrice\":21.99, \"trackPrice\":1.99, \"releaseDate\":\"2002-12-13T08:00:00Z\",
+        \"collectionExplicitness\":\"notExplicit\", \"trackExplicitness\":\"notExplicit\",
+        \"discCount\":1, \"discNumber\":1, \"trackCount\":14, \"trackNumber\":14,
+        \"trackTimeMillis\":2689759.0, \"country\":\"USA\", \"currency\":\"USD\",
+        \"primaryGenreName\":\"Sci Fi & Fantasy\", \"shortDescription\":\"A bounty
+        hunter boards the ship at night, catching the crew off-guard.\", \n\"longDescription\":\"The
+        crew is caught off-guard when a bounty hunter, eager to claim the enormous
+        reward on River's head, sneaks aboard Serenity and methodically begins taking
+        the crew prisoner one by one.\"}, \n{\"wrapperType\":\"track\", \"kind\":\"tv-episode\",
+        \"artistId\":151198837, \"collectionId\":151801083, \"trackId\":151961888,
+        \"artistName\":\"Firefly\", \"collectionName\":\"Firefly, Season 1\", \"trackName\":\"Safe\",
+        \"collectionCensoredName\":\"Firefly, Season 1\", \"trackCensoredName\":\"Safe\",
+        \"artistViewUrl\":\"http://itunes.apple.com/us/tv-show/firefly/id151198837?uo=4\",
+        \"collectionViewUrl\":\"http://itunes.apple.com/us/tv-season/safe/id151801083?i=151961888&uo=4\",
+        \"trackViewUrl\":\"http://itunes.apple.com/us/tv-season/safe/id151801083?i=151961888&uo=4\",
+        \"previewUrl\":\"http://a50.v.phobos.apple.com/us/r1000/016/Video/7f/8d/3a/mzm.gyfqhmfl..640x480.h264lc.d2.p.m4v\",
+        \"artworkUrl30\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.40x30-75.jpg\",
+        \"artworkUrl60\":\"http://a4.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.80x60-75.jpg\",
+        \"artworkUrl100\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.100x100-75.jpg\",
+        \"collectionPrice\":21.99, \"trackPrice\":1.99, \"releaseDate\":\"2002-11-08T08:00:00Z\",
+        \"collectionExplicitness\":\"notExplicit\", \"trackExplicitness\":\"notExplicit\",
+        \"discCount\":1, \"discNumber\":1, \"trackCount\":14, \"trackNumber\":5, \"trackTimeMillis\":2673726.0,
+        \"country\":\"USA\", \"currency\":\"USD\", \"primaryGenreName\":\"Sci Fi &
+        Fantasy\", \"shortDescription\":\"The crew of the Serenity is caught in the
+        crossfire between policemen and outlaws.\", \n\"longDescription\":\"When Simon
+        is kidnapped by a group of villagers in need of a doctor, Serenity is forced
+        to make contact with an Alliance ship in order to seek medical help for the
+        critically wounded Book.\"}, \n{\"wrapperType\":\"track\", \"kind\":\"tv-episode\",
+        \"artistId\":151198837, \"collectionId\":151801083, \"trackId\":151961896,
+        \"artistName\":\"Firefly\", \"collectionName\":\"Firefly, Season 1\", \"trackName\":\"Ariel\",
+        \"collectionCensoredName\":\"Firefly, Season 1\", \"trackCensoredName\":\"Ariel\",
+        \"artistViewUrl\":\"http://itunes.apple.com/us/tv-show/firefly/id151198837?uo=4\",
+        \"collectionViewUrl\":\"http://itunes.apple.com/us/tv-season/ariel/id151801083?i=151961896&uo=4\",
+        \"trackViewUrl\":\"http://itunes.apple.com/us/tv-season/ariel/id151801083?i=151961896&uo=4\",
+        \"previewUrl\":\"http://a121.v.phobos.apple.com/us/r1000/024/Video/fa/76/e2/mzm.pudtjgnh..640x480.h264lc.d2.p.m4v\",
+        \"artworkUrl30\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.40x30-75.jpg\",
+        \"artworkUrl60\":\"http://a4.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.80x60-75.jpg\",
+        \"artworkUrl100\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.100x100-75.jpg\",
+        \"collectionPrice\":21.99, \"trackPrice\":1.99, \"releaseDate\":\"2002-11-15T08:00:00Z\",
+        \"collectionExplicitness\":\"notExplicit\", \"trackExplicitness\":\"notExplicit\",
+        \"discCount\":1, \"discNumber\":1, \"trackCount\":14, \"trackNumber\":9, \"trackTimeMillis\":2675359.0,
+        \"country\":\"USA\", \"currency\":\"USD\", \"primaryGenreName\":\"Sci Fi &
+        Fantasy\", \"shortDescription\":\"The crew infiltrates a hospital with the
+        intention of stealing valuable supplies.\", \n\"longDescription\":\"Simon
+        offers the crew a proposition: if they help him sneak River into a hospital
+        so he can run tests on her, he'll tell them where to find medical supplies
+        that will fetch an enormous price on the black market.\"}, \n{\"wrapperType\":\"track\",
+        \"kind\":\"tv-episode\", \"artistId\":151198837, \"collectionId\":151801083,
+        \"trackId\":151961900, \"artistName\":\"Firefly\", \"collectionName\":\"Firefly,
+        Season 1\", \"trackName\":\"Heart of Gold\", \"collectionCensoredName\":\"Firefly,
+        Season 1\", \"trackCensoredName\":\"Heart of Gold\", \"artistViewUrl\":\"http://itunes.apple.com/us/tv-show/firefly/id151198837?uo=4\",
+        \"collectionViewUrl\":\"http://itunes.apple.com/us/tv-season/heart-of-gold/id151801083?i=151961900&uo=4\",
+        \"trackViewUrl\":\"http://itunes.apple.com/us/tv-season/heart-of-gold/id151801083?i=151961900&uo=4\",
+        \"previewUrl\":\"http://a1623.v.phobos.apple.com/us/r1000/012/Video/1c/2f/6c/mzm.nappdpmo..640x480.h264lc.d2.p.m4v\",
+        \"artworkUrl30\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.40x30-75.jpg\",
+        \"artworkUrl60\":\"http://a4.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.80x60-75.jpg\",
+        \"artworkUrl100\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.100x100-75.jpg\",
+        \"collectionPrice\":21.99, \"trackPrice\":1.99, \"releaseDate\":\"2006-05-05T07:00:00Z\",
+        \"collectionExplicitness\":\"notExplicit\", \"trackExplicitness\":\"notExplicit\",
+        \"discCount\":1, \"discNumber\":1, \"trackCount\":14, \"trackNumber\":13,
+        \"trackTimeMillis\":2672734.0, \"country\":\"USA\", \"currency\":\"USD\",
+        \"primaryGenreName\":\"Sci Fi & Fantasy\", \"shortDescription\":\"The Serenity
+        crew defends a bordello from a gunslinger.\", \n\"longDescription\":\"The
+        crew comes to the aid of a bordello when its madam, an old acquaintance of
+        Inara's, asks for help after a gunslinger claims a prostitute\\u2019s baby
+        is his and he's taking it because his wife is barren.\"}, \n{\"wrapperType\":\"track\",
+        \"kind\":\"tv-episode\", \"artistId\":151198837, \"collectionId\":151801083,
+        \"trackId\":151961921, \"artistName\":\"Firefly\", \"collectionName\":\"Firefly,
+        Season 1\", \"trackName\":\"The Message\", \"collectionCensoredName\":\"Firefly,
+        Season 1\", \"trackCensoredName\":\"The Message\", \"artistViewUrl\":\"http://itunes.apple.com/us/tv-show/firefly/id151198837?uo=4\",
+        \"collectionViewUrl\":\"http://itunes.apple.com/us/tv-season/the-message/id151801083?i=151961921&uo=4\",
+        \"trackViewUrl\":\"http://itunes.apple.com/us/tv-season/the-message/id151801083?i=151961921&uo=4\",
+        \"previewUrl\":\"http://a479.v.phobos.apple.com/us/r1000/008/Video/c2/59/13/mzm.ffowabid..640x480.h264lc.d2.p.m4v\",
+        \"artworkUrl30\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.40x30-75.jpg\",
+        \"artworkUrl60\":\"http://a4.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.80x60-75.jpg\",
+        \"artworkUrl100\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.100x100-75.jpg\",
+        \"collectionPrice\":21.99, \"trackPrice\":1.99, \"releaseDate\":\"2003-12-01T08:00:00Z\",
+        \"collectionExplicitness\":\"notExplicit\", \"trackExplicitness\":\"notExplicit\",
+        \"discCount\":1, \"discNumber\":1, \"trackCount\":14, \"trackNumber\":12,
+        \"trackTimeMillis\":2662334.0, \"country\":\"USA\", \"currency\":\"USD\",
+        \"primaryGenreName\":\"Sci Fi & Fantasy\", \"shortDescription\":\"Mal and
+        Zoe receive a crate containing the body of an old wartime friend.\", \n\"longDescription\":\"While
+        Jayne opens a mail package from his mother that contains a wool cap with ear
+        flaps and a pom-pom, Mal and Zoe open their package to discover the body of
+        their old war buddy, Tracey.\"}, \n{\"wrapperType\":\"track\", \"kind\":\"tv-episode\",
+        \"artistId\":151198837, \"collectionId\":151801083, \"trackId\":151961904,
+        \"artistName\":\"Firefly\", \"collectionName\":\"Firefly, Season 1\", \"trackName\":\"Trash\",
+        \"collectionCensoredName\":\"Firefly, Season 1\", \"trackCensoredName\":\"Trash\",
+        \"artistViewUrl\":\"http://itunes.apple.com/us/tv-show/firefly/id151198837?uo=4\",
+        \"collectionViewUrl\":\"http://itunes.apple.com/us/tv-season/trash/id151801083?i=151961904&uo=4\",
+        \"trackViewUrl\":\"http://itunes.apple.com/us/tv-season/trash/id151801083?i=151961904&uo=4\",
+        \"previewUrl\":\"http://a72.v.phobos.apple.com/us/r1000/011/Video/a5/0a/07/mzm.ahbcesis..640x480.h264lc.d2.p.m4v\",
+        \"artworkUrl30\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.40x30-75.jpg\",
+        \"artworkUrl60\":\"http://a4.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.80x60-75.jpg\",
+        \"artworkUrl100\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.100x100-75.jpg\",
+        \"collectionPrice\":21.99, \"trackPrice\":1.99, \"releaseDate\":\"2003-11-24T08:00:00Z\",
+        \"collectionExplicitness\":\"notExplicit\", \"trackExplicitness\":\"notExplicit\",
+        \"discCount\":1, \"discNumber\":1, \"trackCount\":14, \"trackNumber\":11,
+        \"trackTimeMillis\":2672734.0, \"country\":\"USA\", \"currency\":\"USD\",
+        \"primaryGenreName\":\"Sci Fi & Fantasy\", \"shortDescription\":\"Mal's \\\"wife\\\"
+        Saffron resurfaces with a plan to steal a valuable gun from a collector.\",
+        \n\"longDescription\":\"Mal is shocked to discover his old friend's new bride
+        is Saffron who, although furious after Mal blows her cover, offers to cut
+        Mal in on what she calls the perfect, big-time scam.\"}]\n}\n\n\n"
+    http_version: '1.1'
+  recorded_at: Wed, 28 Mar 2012 00:20:04 GMT
+recorded_with: VCR 2.0.0

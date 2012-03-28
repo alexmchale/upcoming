@@ -10,13 +10,12 @@ Turn.config do |c|
   # :pretty   - new pretty reporter
   # :marshal  - dump output as YAML (normal run mode only)
   # :cue      - interactive testing
-  c.format  = :pretty
+  c.format  = :dotted
+end
 
-  # turn on invoke/execute tracing, enable full backtrace
-  c.trace   = true
-
-  # use humanized test names (works only with :outline format)
-  c.natural = true
+VCR.configure do |c|
+  c.cassette_library_dir = 'test/cassettes'
+  c.hook_into :fakeweb
 end
 
 class ActiveSupport::TestCase

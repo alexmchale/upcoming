@@ -13,6 +13,8 @@ gem 'erb2haml'
 gem 'haml'
 gem 'jquery-rails'
 gem 'simple_form'
+gem 'vcr'
+gem 'fakeweb'
 
 group :assets do
   gem 'coffee-rails'
