@@ -22,8 +22,7 @@
             %li= link_to "Upcoming", root_path, :class => "brand"
             %li{:class => "#{active_if 'searches#new'}"}= link_to "Search", new_search_path
             %li{:class => "#{active_if 'searches#index'}"}= link_to "Saved Searches", searches_path
-            - if @unacknowledged_search_results.present?
-              %li{class: active_if('search_results#index')}= link_to pluralize(@unacknowledged_search_results.count, "New Matches"), search_results_path
+            = navbar_search_results @unacknowledged_search_results
             - if current_user
               %li{:class => active_if('users#edit')}= link_to current_user.email, edit_user_path(current_user)
               %li= link_to "Sign Out", sign_out_path, method: "delete"
