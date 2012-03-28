@@ -19,7 +19,7 @@
         .container
           %ul.nav
             %li= image_tag "28-star.png", width: 26, height: 26
-            = navbar_link "Upcoming", root_path, nil, {}, { class: "brand" }
+            = navbar_link "Upcoming", root_path, nil, {}, { class: "brand" }, false
             = navbar_link "Search", new_search_path, "searches#new"
             = navbar_link "Saved Searches", searches_path, "searches#index"
             = navbar_search_results @unacknowledged_search_results
