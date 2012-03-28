@@ -24,14 +24,14 @@
 
         %td
           %a{:href => search_path(search)}
-            - if search.records.count > 0
+            - if search.records.length > 0
               = image_tag search.records.first.artwork_url
             - else
               = image_tag "no-records.png"
 
         %td= link_to search.term, search_path(search), :class => "search-term"
 
-        %td= pluralize search.records.count, search.style.downcase.singularize
+        %td= pluralize search.records.length, search.style.downcase.singularize
 
         %td= render 'monitor_by_email', search: search
 

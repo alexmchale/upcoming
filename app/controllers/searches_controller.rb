@@ -5,7 +5,7 @@ class SearchesController < ApplicationController
   before_filter :find_search, only: %w( show destroy monitor_by_email )
 
   def index
-    @searches = current_or_guest_user.searches.includes(:records).all
+    @searches = current_or_guest_user.searches.includes(:records, :search_results).all
 
     if current_or_guest_user.searches.monitored.count == 0 && @searches.count > 0 && !email_instructed?
       flash.now[:alert] = "Click on an envelope and Upcoming will send you an email when that search finds new results."
