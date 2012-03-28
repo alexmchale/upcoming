@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://itunes.apple.com/search?attribute=showTerm&term=firefly&entity=tvEpisode&limit=200
+    uri: http://itunes.apple.com/search?media=tvShow&attribute=showTerm&term=firefly&entity=tvEpisode&limit=200
     body:
       encoding: US-ASCII
       string: ''
@@ -17,23 +17,23 @@ http_interactions:
       message: OK
     headers:
       x-apple-orig-url-path:
-      - /search?attribute=showTerm&term=firefly&entity=tvEpisode&limit=200
+      - /search?media=tvShow&attribute=showTerm&term=firefly&entity=tvEpisode&limit=200
       x-apple-translated-wo-url:
-      - /WebObjects/MZStoreServices.woa/ws/wsSearch?attribute=showTerm&term=firefly&entity=tvEpisode&limit=200
+      - /WebObjects/MZStoreServices.woa/ws/wsSearch?media=tvShow&attribute=showTerm&term=firefly&entity=tvEpisode&limit=200
       x-apple-application-site:
-      - NWK
+      - ST11
       x-apple-max-age:
       - '3600'
       content-type:
       - text/javascript; charset=utf-8
       x-apple-application-instance:
-      - '1014014'
+      - '2027005'
       x-webobjects-loadaverage:
       - '0'
       cache-control:
-      - no-transform, max-age=19
+      - no-transform, max-age=55
       date:
-      - Wed, 28 Mar 2012 00:20:00 GMT
+      - Wed, 28 Mar 2012 00:34:18 GMT
       content-length:
       - '22517'
       connection:
@@ -175,6 +175,25 @@ http_interactions:
         to a planet where Jayne participated in a heist gone bad, they're shocked
         to discover that Jayne's past actions have turned him into a local hero of
         Robin Hood-like mythic proportions.\"}, \n{\"wrapperType\":\"track\", \"kind\":\"tv-episode\",
+        \"artistId\":151198837, \"collectionId\":151801083, \"trackId\":151961902,
+        \"artistName\":\"Firefly\", \"collectionName\":\"Firefly, Season 1\", \"trackName\":\"Objects
+        In Space\", \"collectionCensoredName\":\"Firefly, Season 1\", \"trackCensoredName\":\"Objects
+        In Space\", \"artistViewUrl\":\"http://itunes.apple.com/us/tv-show/firefly/id151198837?uo=4\",
+        \"collectionViewUrl\":\"http://itunes.apple.com/us/tv-season/objects-in-space/id151801083?i=151961902&uo=4\",
+        \"trackViewUrl\":\"http://itunes.apple.com/us/tv-season/objects-in-space/id151801083?i=151961902&uo=4\",
+        \"previewUrl\":\"http://a1858.v.phobos.apple.com/us/r1000/036/Video/52/6d/28/mzm.ttjnkvba..640x480.h264lc.d2.p.m4v\",
+        \"artworkUrl30\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.40x30-75.jpg\",
+        \"artworkUrl60\":\"http://a4.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.80x60-75.jpg\",
+        \"artworkUrl100\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.100x100-75.jpg\",
+        \"collectionPrice\":21.99, \"trackPrice\":1.99, \"releaseDate\":\"2002-12-13T08:00:00Z\",
+        \"collectionExplicitness\":\"notExplicit\", \"trackExplicitness\":\"notExplicit\",
+        \"discCount\":1, \"discNumber\":1, \"trackCount\":14, \"trackNumber\":14,
+        \"trackTimeMillis\":2689759.0, \"country\":\"USA\", \"currency\":\"USD\",
+        \"primaryGenreName\":\"Sci Fi & Fantasy\", \"shortDescription\":\"A bounty
+        hunter boards the ship at night, catching the crew off-guard.\", \n\"longDescription\":\"The
+        crew is caught off-guard when a bounty hunter, eager to claim the enormous
+        reward on River's head, sneaks aboard Serenity and methodically begins taking
+        the crew prisoner one by one.\"}, \n{\"wrapperType\":\"track\", \"kind\":\"tv-episode\",
         \"artistId\":151198837, \"collectionId\":151801083, \"trackId\":151961898,
         \"artistName\":\"Firefly\", \"collectionName\":\"Firefly, Season 1\", \"trackName\":\"War
         Stories\", \"collectionCensoredName\":\"Firefly, Season 1\", \"trackCensoredName\":\"War
@@ -195,28 +214,9 @@ http_interactions:
         men are captured by Adelai Niska\\u2014the client who previously hired Mal
         to steal the medicine bound for Paradiso.\"}, \n{\"wrapperType\":\"track\",
         \"kind\":\"tv-episode\", \"artistId\":151198837, \"collectionId\":151801083,
-        \"trackId\":151961902, \"artistName\":\"Firefly\", \"collectionName\":\"Firefly,
-        Season 1\", \"trackName\":\"Objects In Space\", \"collectionCensoredName\":\"Firefly,
-        Season 1\", \"trackCensoredName\":\"Objects In Space\", \"artistViewUrl\":\"http://itunes.apple.com/us/tv-show/firefly/id151198837?uo=4\",
-        \"collectionViewUrl\":\"http://itunes.apple.com/us/tv-season/objects-in-space/id151801083?i=151961902&uo=4\",
-        \"trackViewUrl\":\"http://itunes.apple.com/us/tv-season/objects-in-space/id151801083?i=151961902&uo=4\",
-        \"previewUrl\":\"http://a1858.v.phobos.apple.com/us/r1000/036/Video/52/6d/28/mzm.ttjnkvba..640x480.h264lc.d2.p.m4v\",
-        \"artworkUrl30\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.40x30-75.jpg\",
-        \"artworkUrl60\":\"http://a4.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.80x60-75.jpg\",
-        \"artworkUrl100\":\"http://a1.mzstatic.com/us/r1000/059/Features/cd/2a/7f/dj.trklowyp.100x100-75.jpg\",
-        \"collectionPrice\":21.99, \"trackPrice\":1.99, \"releaseDate\":\"2002-12-13T08:00:00Z\",
-        \"collectionExplicitness\":\"notExplicit\", \"trackExplicitness\":\"notExplicit\",
-        \"discCount\":1, \"discNumber\":1, \"trackCount\":14, \"trackNumber\":14,
-        \"trackTimeMillis\":2689759.0, \"country\":\"USA\", \"currency\":\"USD\",
-        \"primaryGenreName\":\"Sci Fi & Fantasy\", \"shortDescription\":\"A bounty
-        hunter boards the ship at night, catching the crew off-guard.\", \n\"longDescription\":\"The
-        crew is caught off-guard when a bounty hunter, eager to claim the enormous
-        reward on River's head, sneaks aboard Serenity and methodically begins taking
-        the crew prisoner one by one.\"}, \n{\"wrapperType\":\"track\", \"kind\":\"tv-episode\",
-        \"artistId\":151198837, \"collectionId\":151801083, \"trackId\":151961888,
-        \"artistName\":\"Firefly\", \"collectionName\":\"Firefly, Season 1\", \"trackName\":\"Safe\",
-        \"collectionCensoredName\":\"Firefly, Season 1\", \"trackCensoredName\":\"Safe\",
-        \"artistViewUrl\":\"http://itunes.apple.com/us/tv-show/firefly/id151198837?uo=4\",
+        \"trackId\":151961888, \"artistName\":\"Firefly\", \"collectionName\":\"Firefly,
+        Season 1\", \"trackName\":\"Safe\", \"collectionCensoredName\":\"Firefly,
+        Season 1\", \"trackCensoredName\":\"Safe\", \"artistViewUrl\":\"http://itunes.apple.com/us/tv-show/firefly/id151198837?uo=4\",
         \"collectionViewUrl\":\"http://itunes.apple.com/us/tv-season/safe/id151801083?i=151961888&uo=4\",
         \"trackViewUrl\":\"http://itunes.apple.com/us/tv-season/safe/id151801083?i=151961888&uo=4\",
         \"previewUrl\":\"http://a50.v.phobos.apple.com/us/r1000/016/Video/7f/8d/3a/mzm.gyfqhmfl..640x480.h264lc.d2.p.m4v\",
@@ -309,5 +309,5 @@ http_interactions:
         is Saffron who, although furious after Mal blows her cover, offers to cut
         Mal in on what she calls the perfect, big-time scam.\"}]\n}\n\n\n"
     http_version: '1.1'
-  recorded_at: Wed, 28 Mar 2012 00:20:04 GMT
+  recorded_at: Wed, 28 Mar 2012 00:34:22 GMT
 recorded_with: VCR 2.0.0

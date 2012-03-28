@@ -17,7 +17,8 @@ class Record < ActiveRecord::Base
     return TvEpisode if [ wrapperType, kind ] == [ "track", "tv-episode" ]
     return Movie if [ wrapperType, kind ] == [ "track", "feature-movie" ]
 
-    raise RecordTypeNotFound.new "record type not found for #{result.inspect}"
+    fields = [ wrapperType, kind, collectionType ]
+    raise RecordTypeNotFound.new "record type not found for #{fields.inspect}"
   end
 
   class RecordTypeNotFound < Exception; end
