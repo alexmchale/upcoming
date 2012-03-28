@@ -48,7 +48,12 @@ class SearchesController < ApplicationController
       @search.monitor_by_email = !@search.monitor_by_email
       @search.save!
     end
-    redirect_to request.referer
+
+    if request.xhr?
+      render json: { success: true }
+    else
+      redirect_to request.referer
+    end
   end
 
   def toggle_all_emails
