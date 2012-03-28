@@ -13,6 +13,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.pjax
 //
 //= require bootstrap
 //= require bootstrap-tooltip
@@ -20,4 +21,5 @@
 //= require bootstrap-alert
 //= require bootstrap-popover
 //
+//= require global
 //= require search

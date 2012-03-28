@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
   before_filter :set_no_cache
   before_filter :find_unacknowledged_search_results
 
+  layout :set_layout
+
   helper_method :current_or_guest_user, :current_user
 
   protected
@@ -69,8 +71,17 @@ class ApplicationController < ActionController::Base
       current_or_guest_user.
       search_results.
       unacknowledged.
+      includes(:search, :record).
       order("created_at DESC").
       all
+  end
+
+  def set_layout
+    if request.headers['X-PJAX']
+      false
+    else
+      "application"
+    end
   end
 
 end

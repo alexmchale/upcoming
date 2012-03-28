@@ -19,16 +19,16 @@
         .container
           %ul.nav
             %li= image_tag "28-star.png", width: 26, height: 26
-            %li= link_to "Upcoming", root_path, :class => "brand"
-            %li{:class => "#{active_if 'searches#new'}"}= link_to "Search", new_search_path
-            %li{:class => "#{active_if 'searches#index'}"}= link_to "Saved Searches", searches_path
+            = navbar_link "Upcoming", root_path, nil, {}, { class: "brand" }
+            = navbar_link "Search", new_search_path, "searches#new"
+            = navbar_link "Saved Searches", searches_path, "searches#index"
             = navbar_search_results @unacknowledged_search_results
             - if current_user
-              %li{:class => active_if('users#edit')}= link_to current_user.email, edit_user_path(current_user)
-              %li= link_to "Sign Out", sign_out_path, method: "delete"
+              = navbar_link current_user.email, edit_user_path(current_user), "users#edit"
+              = navbar_link "Sign Out", sign_out_path, nil, {}, { method: "delete" }, false
             - else
-              %li{:class => active_if('user_sessions#new')}= link_to "Sign In", new_user_session_path
-              %li.sign-up{:class => active_if('users#new')}= link_to "Sign Up!", new_user_path
+              = navbar_link "Sign In", new_user_session_path, "user_sessions#new"
+              = navbar_link "Sign Up!", new_user_path, "users#new", { class: "sign-up" }
 
     #main-content.container
       - if flash[:error].present?
@@ -43,7 +43,7 @@
         .alert.fade.in.alert-error
           %a.close{"data-dismiss" => "alert", :href => "#"} &times;
           = flash[:alert]
-      = yield
+      #main-payload= yield
 
     #main-footer.container
       %p
