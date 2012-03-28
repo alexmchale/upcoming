@@ -28,14 +28,14 @@ $ ->
     anchor = $(this)
     row = anchor.closest("tr")
     id = row.data("id")
-    $.get "/search_results/#{id}/acknowledge"
-    row.fadeOut 500
-    count = parseInt($("#search-results-link").data("result-count"), 10)
-    count -= 1
-    count = 0 if count < 0
-    label = if count == 1 then "1 New Match" else "#{count} New Matches"
-    $("#search-results-link").data("result-count", count).html(label)
-    if count == 0
-      $("#search-results-navbar").hide
-      window.location = "/searches"
+    $.get "/search_results/#{id}/acknowledge", ->
+      row.fadeOut 500
+      count = parseInt($("#search-results-link").data("result-count"), 10)
+      count -= 1
+      count = 0 if count < 0
+      label = if count == 1 then "1 New Match" else "#{count} New Matches"
+      $("#search-results-link").data("result-count", count).html(label)
+      if count == 0
+        $("#search-results-navbar").hide
+        window.location = "/searches"
     return false
