@@ -5,6 +5,26 @@ class Retailer < ActiveRecord::Base
   def affiliate_link url
     # http://www.apple.com/itunes/affiliates/resources/documentation/linking-to-the-itunes-music-store.html#AffiliateEncodingLinkShare
 
+    linkshare_id = "30";
+    affiliate_id = "pI1Hpk0GogU";
+
+    # Remove any existing partner codes.
+    url.gsub! /partnerId=[^&]+|tduid=[^&]+/, ""
+    url.gsub! /[&\?]+$/, ""
+    url.gsub! /&+/, "&"
+    url.gsub! /\?&+/, "?"
+
+    # Add partner codes.
+    url << if url =~ /\?/ then "&" else "?" end
+    url << "partnerId=#{linkshare_id}&tduid=#{affiliate_id}"
+
+    return url
+  end
+
+=begin
+  def affiliate_link url
+    # http://www.apple.com/itunes/affiliates/resources/documentation/linking-to-the-itunes-music-store.html#AffiliateEncodingLinkShare
+
     # Add LinkShare partner code.
     url +=
       if url =~ /\?/
@@ -22,5 +42,6 @@ class Retailer < ActiveRecord::Base
 
     return url
   end
+=end
 
 end
