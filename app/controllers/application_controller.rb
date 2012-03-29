@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
       if session[:guest_user_id]
         logging_in
         guest_user.destroy
-        session[:guest_user_id] = nil
+        session.delete :guest_user_id
       end
       current_user
     else
@@ -32,12 +32,17 @@ class ApplicationController < ActionController::Base
   # find guest_user object associated with the current session,
   # creating one as needed
   def guest_user
-    @_guest_user ||= User.find(session[:guest_user_id].nil? ? session[:guest_user_id] = create_guest_user.id : session[:guest_user_id])
-  end
+    return @_guest_user if @_guest_user
 
-  def create_guest_user
-    email = "guest_#{Time.now.to_i}#{rand(99)}@example.com"
-    User.create! email: email
+    @_guest_user = User.find_by_id session[:guest_user_id]
+
+    unless @_guest_user
+      email = "guest_#{Time.now.to_i}#{rand(99)}@example.com"
+      @_guest_user = User.create! email: email
+      session[:guest_user_id] = @_guest_user.id
+    end
+
+    @_guest_user
   end
 
   def current_user
@@ -46,6 +51,7 @@ class ApplicationController < ActionController::Base
 
   def sign_in user
     session[:user_id] = user.id
+    user
   end
 
   def sign_out
