@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
 
-  default from: "upcoming@anticlever.com"
+  default from: %{"Upcoming" <upcoming@anticlever.com>}
 
   def record_added search, record
     @search  = search
