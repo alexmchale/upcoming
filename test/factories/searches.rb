@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :search do
+    retailer_id { (Retailer.find_by_name("iTunes") || FactoryGirl.create(:itunes)).id }
     parameters nil
     response nil
     monitor_by_email false

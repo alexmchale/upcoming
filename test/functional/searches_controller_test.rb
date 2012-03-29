@@ -2,10 +2,6 @@ require 'test_helper'
 
 class SearchesControllerTest < ActionController::TestCase
 
-  def setup
-    create :itunes
-  end
-
   def test_new_search
     get :new
 
