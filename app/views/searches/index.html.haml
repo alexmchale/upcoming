@@ -29,7 +29,7 @@
             - else
               = image_tag "no-records.png"
 
-        %td= link_to search.term, search_path(search), :class => "search-term"
+        %td= link_to search.term, search_path(search), :class => "search-term", "data-pjax" => "#main-payload"
 
         %td= pluralize search.records.length, search.style.downcase.singularize
 
