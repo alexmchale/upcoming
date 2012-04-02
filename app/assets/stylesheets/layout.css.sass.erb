@@ -125,11 +125,21 @@ ul.nav-tabs.search-types
       border-color: $color-border-medium
       background-color: $color-border-light 
 
-input[name='search[parameters][term]']
-  font-size: $font-large
-  width: 500px
-  padding: 25px
-  line-height: $font-large
+form#new_search
+  input[name='search[term]']
+    font-size: $font-large
+    width: 500px
+    padding: 25px
+    line-height: $font-large
+  label.radio
+    display: inline
+    margin-right: 50px
+    input
+      float: none
+      display: inline
+      top: -3px
+      position: relative
+      margin-right: 5px
 
 label.radio, label.control-label
   font-size: $font-medium

@@ -54,4 +54,9 @@ class User < ActiveRecord::Base
     email
   end
 
+  def most_recent_search_style
+    most_recent_search = searches.order("created_at DESC").first
+    if most_recent_search then most_recent_search.style else "TV Episodes" end
+  end
+
 end

@@ -16,14 +16,35 @@ class Search < ActiveRecord::Base
     parameters[:term]
   end
 
-  def terms
-    term.to_s.split(/\s+/)
+  def term= term
+    self.parameters ||= {}
+    self.parameters[:term] = term
   end
 
   def style
     return "TV Episodes" if [ parameters[:media], parameters[:entity] ] == %w( tvShow tvEpisode )
     return "TV Seasons" if [ parameters[:media], parameters[:entity] ] == %w( tvShow tvSeason )
     return "Movies" if parameters[:media] == "movie"
+  end
+
+  def style= style
+    self.parameters ||= {}
+
+    case style
+    when "TV Episodes"
+      self.parameters[:media] = "tvShow"
+      self.parameters[:entity] = "tvEpisode"
+    when "TV Seasons"
+      self.parameters[:media] = "tvShow"
+      self.parameters[:entity] = "tvSeason"
+    when "Movies"
+      self.parameters[:media] = "movie"
+      self.parameters.delete :entity
+    end
+  end
+
+  def terms
+    term.to_s.split(/\s+/)
   end
 
   def perform notify = nil

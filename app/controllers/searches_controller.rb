@@ -20,6 +20,7 @@ class SearchesController < ApplicationController
 
   def new
     @search = Search.new
+    @search.style = current_or_guest_user.most_recent_search_style
   end
 
   def create

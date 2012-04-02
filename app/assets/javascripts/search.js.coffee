@@ -39,3 +39,6 @@ $ ->
         $("#search-results-navbar").hide
         window.location = "/searches"
     return false
+
+  $("#new_search input[type='radio'], #new_search input[type='checkbox']").change ->
+    $("#search_term").focus()
