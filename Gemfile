@@ -22,7 +22,6 @@ group :assets do
 end
 
 group :test, :development do
-  gem 'autotest-fsevent'
   gem 'autotest-rails'
   gem 'factory_girl_rails'
   gem 'minitest'
